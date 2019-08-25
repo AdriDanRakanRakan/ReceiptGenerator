@@ -8,6 +8,14 @@
  *
  * @author akifrabbani
  */
+
+import java.io.FileReader;
+import java.util.Iterator;
+ 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 public class WelcomeClass extends javax.swing.JFrame {
 
     /**
@@ -37,16 +45,16 @@ public class WelcomeClass extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addGap(154, 154, 154)
                 .addComponent(jLabel1)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addGap(101, 101, 101)
                 .addComponent(jLabel1)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         pack();
