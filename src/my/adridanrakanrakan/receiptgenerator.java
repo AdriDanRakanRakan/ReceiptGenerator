@@ -17,7 +17,7 @@ public class receiptgenerator {
     public static void main(String[] args) {
         
         //hi dari kami semua untuk anda
-        
+        //hi ini pc
 
     }
     
