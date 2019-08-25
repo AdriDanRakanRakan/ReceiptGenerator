@@ -15,7 +15,10 @@ public class receiptgenerator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        //hi dari kami semua untuk anda
+        
+
     }
     
 }
