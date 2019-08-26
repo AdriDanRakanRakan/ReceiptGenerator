@@ -20,6 +20,12 @@ public class ProductsClass extends javax.swing.JFrame {
     public ProductsClass() {
         initComponents();
     }
+    
+    int countLaici = 0;
+    int countBlackcurrant = 0;
+    int countStroberi = 0;
+    int countMango = 0;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -192,6 +198,7 @@ public class ProductsClass extends javax.swing.JFrame {
 
         jQtyLaici.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jQtyLaici.setText("jTextField1");
+        jQtyLaici.setEnabled(false);
         jQtyLaici.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jQtyLaiciActionPerformed(evt);
@@ -241,6 +248,7 @@ public class ProductsClass extends javax.swing.JFrame {
         jLabel2.setText("Strawberry:");
 
         jQtyStroberi.setText("jTextField1");
+        jQtyStroberi.setEnabled(false);
         jQtyStroberi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jQtyStroberiActionPerformed(evt);
@@ -287,6 +295,7 @@ public class ProductsClass extends javax.swing.JFrame {
         jLabel4.setText("Mango:");
 
         jQtyMango.setText("jTextField1");
+        jQtyMango.setEnabled(false);
         jQtyMango.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jQtyMangoActionPerformed(evt);
@@ -334,6 +343,7 @@ public class ProductsClass extends javax.swing.JFrame {
         jLabel3.setText("Blackcurrant:");
 
         jQtyBlackcurrent.setText("jTextField1");
+        jQtyBlackcurrent.setEnabled(false);
         jQtyBlackcurrent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jQtyBlackcurrentActionPerformed(evt);
@@ -447,22 +457,14 @@ public class ProductsClass extends javax.swing.JFrame {
     }//GEN-LAST:event_jQtyBlackcurrentActionPerformed
 
     private void jQtyLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQtyLaiciActionPerformed
-jQtyLaici.setEnabled(false);        // TODO add your handling code here:
-       
-       
-        
+       // TODO add your handling code here:
     }//GEN-LAST:event_jQtyLaiciActionPerformed
 
     private void jClearLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearLaiciActionPerformed
         jQtyLaici.setText(" ");
-        countLaici = 0;
+        
     }//GEN-LAST:event_jClearLaiciActionPerformed
 
-       //COUNT BLACKCURRANT QTY BASED ON CLICK
-    int countBlackcurrant = 0; 
-//COUNT LAICI QTY BASED ON CLICK
-    int countLaici=0;  
-    
     private void jClearStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearStroberiActionPerformed
         jQtyStroberi.setText(" ");
         countStroberi = 0;
@@ -477,43 +479,28 @@ jQtyLaici.setEnabled(false);        // TODO add your handling code here:
         jQtyBlackcurrent.setText(" ");
         countBlackcurrant = 0;
     }//GEN-LAST:event_jClearBlackcurrantActionPerformed
-
+       //COUNT BLACKCURRANT QTY BASED ON CLICK
+     
     private void jBlackcurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlackcurrentButtonActionPerformed
-        countBlackcurrant++;
-        String blackcurrant = Integer.toString(countBlackcurrant);
-
-        //Send quantity to TextBox
-        jQtyBlackcurrent.setText(blackcurrant);
+        //Enable Quantity Textfield
+      jQtyBlackcurrent.setEnabled(true);
     }//GEN-LAST:event_jBlackcurrentButtonActionPerformed
 
     private void jMangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMangoButtonActionPerformed
-        countMango++;
-        String mango = Integer.toString(countMango);
-
-        //Send quantity to TextBox
-        jQtyMango.setText(mango);
+        //Enable Quantity Textfield
+      jQtyMango.setEnabled(true);
     }//GEN-LAST:event_jMangoButtonActionPerformed
 
     private void jStrawberryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStrawberryButtonActionPerformed
-        countStroberi++;
-        String stroberi = Integer.toString(countStroberi);
-
-        //Send quantity to TextBox
-        jQtyStroberi.setText(stroberi);
+        //Enable Quantity Textfield
+      jQtyStroberi.setEnabled(true);
     }//GEN-LAST:event_jStrawberryButtonActionPerformed
 
     private void jLaiciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLaiciButtonActionPerformed
-
-        countLaici++;
-        String laici = Integer.toString(countLaici);
-
-        //Send quantity to TextBox
-        jQtyLaici.setText(laici);
+        //Enable Quantity Textfield
+      jQtyLaici.setEnabled(true);
     }//GEN-LAST:event_jLaiciButtonActionPerformed
- //COUNT STRAWBERRY QTY BASED ON CLICK
-    int countStroberi = 0;
-    //COUNT MANGO QTY BASED ON CLICK
-    int countMango = 0;
+
     /**
      * @param args the command line arguments
      */
