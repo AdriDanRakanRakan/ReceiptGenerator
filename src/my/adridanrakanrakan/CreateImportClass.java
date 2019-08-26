@@ -13,14 +13,22 @@ package my.adridanrakanrakan;
 
 import java.io.FileReader;
 import java.util.Iterator;
- 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.FileWriter;  
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import org.apache.commons.io.IOUtils;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import javax.swing.JOptionPane;
 
 public class CreateImportClass extends javax.swing.JFrame {
 
@@ -28,9 +36,10 @@ public class CreateImportClass extends javax.swing.JFrame {
      * Creates new form WelcomeClass
      */
     
+    public int current_sale_id = 0;
     int mode = 1;
     String finalP = "";
-    
+    public JSONObject data = new JSONObject();
     public CreateImportClass() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -207,7 +216,7 @@ public class CreateImportClass extends javax.swing.JFrame {
           String filePath = fd.getDirectory() + fd.getFile();
           finalP = filePath;
           System.out.println("You chose " + filePath);
-          //filePathDisplay.setText(filePath);
+          filePathDisplay.setText(filePath);
         }
     }//GEN-LAST:event_locateFileActionPerformed
 
@@ -215,31 +224,86 @@ public class CreateImportClass extends javax.swing.JFrame {
         //System.exit(0);
         dispose();
     }//GEN-LAST:event_exitBtnActionPerformed
-
+    
+    public boolean saveChanges() {
+        try {    
+            FileWriter fw = new FileWriter(finalP);    
+            fw.write(data.toString());    
+            fw.close();  
+        } catch(Exception e) {
+            System.out.println(e);
+            return false;
+        }
+        
+        return true;
+    }
+    
     private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueBtnActionPerformed
-//        if (mode == 1) {
-//            // create new file
-//            FileDialog fd = new FileDialog(this, "Choose where to save", FileDialog.SAVE);
-//            fd.setDirectory(System.getProperty("user.home"));
-//    //        fd.setFile("*.json");
-//            fd.setVisible(true);
-//            String filename = fd.getFile();
-//            if (filename == null) {
-//              continueBtn.setEnabled(false);
-//              filePathDisplay.setText("");
-//              System.out.println("You cancelled the choice");
-//            } else {
-//              continueBtn.setEnabled(true);
-//              String filePath = fd.getDirectory() + fd.getFile();
-//              finalP = filePath;
-//              System.out.println("You chose " + filePath);
-//              filePathDisplay.setText(filePath);
-//            }
-//        } else {
-//            // load the current file from directory
-//        }
-        this.setVisible(false);
-        new Menu().setVisible(true);
+        if (mode == 1) {
+            // create new file
+            FileDialog fd = new FileDialog(this, "Choose where to save", FileDialog.SAVE);
+            fd.setDirectory(System.getProperty("user.home"));
+            fd.setFile("*.json");
+            fd.setVisible(true);
+            String filename = fd.getFile();
+            if (filename == null) {
+              continueBtn.setEnabled(false);
+              filePathDisplay.setText("");
+              System.out.println("You cancelled the choice");
+            } else {
+              continueBtn.setEnabled(true);
+              String filePath = fd.getDirectory() + fd.getFile();
+              finalP = filePath;
+              System.out.println("You chose " + filePath);
+              filePathDisplay.setText(filePath);
+              
+            JSONObject sales = new JSONObject();
+            
+            JSONObject sale1 = new JSONObject();
+            
+            sale1.put("mango", 0);
+            sale1.put("laici", 0);
+            sale1.put("stroberi", 0);
+            sale1.put("blackcurrant", 0);
+            sale1.put("tax", 0);
+            sale1.put("subtotal", 0);
+            sale1.put("totalprice", 0);
+            
+            sales.put(0, sale1);
+            
+            data = new JSONObject();
+            data.put("sales", sales);
+            data.put("current_sale_id", 0);
+            System.out.println(data);
+            
+            saveChanges();
+            
+                this.setVisible(false);
+                new Menu().setVisible(true);
+            }
+        } else {
+            System.out.println("aa");
+            // load the current file from directory
+            File f = new File(finalP);
+            if (f.exists()){
+                 try
+                {
+                    InputStream is = new FileInputStream(finalP);
+                    String jsonTxt = IOUtils.toString(is, "UTF-8");
+                    JSONParser parser = new JSONParser();
+                    Object obj = parser.parse(jsonTxt);
+                    data = (JSONObject) obj;
+                }    catch (Exception ex)  
+                {
+                    // insert code to run when exception occurs
+                    JOptionPane.showMessageDialog(null, "Invalid data file.", "Oops", JOptionPane.ERROR_MESSAGE);
+                }
+                 
+                this.setVisible(false);
+                new Menu().setVisible(true);
+             }
+        }
+
     }//GEN-LAST:event_continueBtnActionPerformed
 
     /**
