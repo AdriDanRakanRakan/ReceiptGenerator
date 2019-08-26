@@ -35,7 +35,6 @@ public class Menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        createimportBtn = new javax.swing.JButton();
         newquotBtn = new javax.swing.JButton();
         editquotBtn = new javax.swing.JButton();
         removequotBtn = new javax.swing.JButton();
@@ -65,18 +64,8 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 595, Short.MAX_VALUE)
         );
 
-        createimportBtn.setBackground(new java.awt.Color(255, 255, 255));
-        createimportBtn.setText("Create / Import File");
-        createimportBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
-        createimportBtn.setContentAreaFilled(false);
-        createimportBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                createimportBtnMouseClicked(evt);
-            }
-        });
-
         newquotBtn.setBackground(new java.awt.Color(255, 255, 255));
-        newquotBtn.setText("Add New Quotation");
+        newquotBtn.setText("Add New Receipt");
         newquotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
         newquotBtn.setContentAreaFilled(false);
         newquotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -91,19 +80,24 @@ public class Menu extends javax.swing.JFrame {
         });
 
         editquotBtn.setBackground(new java.awt.Color(255, 255, 255));
-        editquotBtn.setText("Edit Quotation");
+        editquotBtn.setText("Edit Receipt");
         editquotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
         editquotBtn.setContentAreaFilled(false);
 
         removequotBtn.setBackground(new java.awt.Color(255, 255, 255));
-        removequotBtn.setText("Remove Quotation");
+        removequotBtn.setText("Remove Receipt");
         removequotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
         removequotBtn.setContentAreaFilled(false);
 
         viewquotBtn.setBackground(new java.awt.Color(255, 255, 255));
-        viewquotBtn.setText("View Quotation");
+        viewquotBtn.setText("View Receipt");
         viewquotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
         viewquotBtn.setContentAreaFilled(false);
+        viewquotBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewquotBtnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("File:");
 
@@ -124,7 +118,6 @@ public class Menu extends javax.swing.JFrame {
                                 .addGap(233, 233, 233)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(newquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(createimportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(editquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(removequotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -151,9 +144,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel4)))
-                .addGap(129, 129, 129)
-                .addComponent(createimportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(98, 98, 98)
                 .addComponent(newquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,7 +152,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(editquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(removequotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
@@ -183,10 +174,6 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createimportBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createimportBtnMouseClicked
-        //new CreateImportClass().setVisible(true); //pop-up create import file menu
-    }//GEN-LAST:event_createimportBtnMouseClicked
-
     private void newquotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newquotBtnMouseClicked
         //new ProductsClass(MainClass) .setVisible(true); dispose();  // navigate to product class form
     }//GEN-LAST:event_newquotBtnMouseClicked
@@ -195,6 +182,10 @@ public class Menu extends javax.swing.JFrame {
                this.setVisible(false);
                 new ProductsClass(MainClass).setVisible(true);
     }//GEN-LAST:event_newquotBtnActionPerformed
+
+    private void viewquotBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewquotBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewquotBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,7 +219,6 @@ public class Menu extends javax.swing.JFrame {
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton createimportBtn;
     private javax.swing.JButton editquotBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
