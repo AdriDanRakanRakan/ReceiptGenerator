@@ -24,12 +24,7 @@ public class ProductsClass extends javax.swing.JFrame {
     
     DecimalFormat df = new DecimalFormat ("0.00");
     
-    //Variable Declaration
-    int countLaici = 0;
-    int countBlackcurrant = 0;
-    int countStroberi = 0;
-    int countMango = 0;
-    
+   
     double hausboom = 2.00;
     String  txtTax, txtFinalPrice,txtSubtotal ;
     double totallaici, totalmango, totalstroberi, totalblackcurrant, totalprice,tax,finalprice;
@@ -502,17 +497,17 @@ public class ProductsClass extends javax.swing.JFrame {
 
     private void jClearStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearStroberiActionPerformed
         jQtyStroberi.setText(" ");
-        countStroberi = 0;
+        
     }//GEN-LAST:event_jClearStroberiActionPerformed
 
     private void jClearMangoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearMangoActionPerformed
       jQtyMango.setText(" ");
-      countMango=0;
+    
     }//GEN-LAST:event_jClearMangoActionPerformed
 
     private void jClearBlackcurrantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearBlackcurrantActionPerformed
         jQtyBlackcurrent.setText(" ");
-        countBlackcurrant = 0;
+       
     }//GEN-LAST:event_jClearBlackcurrantActionPerformed
        //COUNT BLACKCURRANT QTY BASED ON CLICK
      
@@ -524,39 +519,41 @@ public class ProductsClass extends javax.swing.JFrame {
     private void jMangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMangoButtonActionPerformed
         //Enable Quantity Textfield
       jQtyMango.setEnabled(true);
+        jQtyMango.setText(" ");
     }//GEN-LAST:event_jMangoButtonActionPerformed
 
     private void jStrawberryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStrawberryButtonActionPerformed
         //Enable Quantity Textfield
       jQtyStroberi.setEnabled(true);
+       jQtyStroberi.setText(" ");
     }//GEN-LAST:event_jStrawberryButtonActionPerformed
 
     private void jLaiciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLaiciButtonActionPerformed
         //Enable Quantity Textfield
       jQtyLaici.setEnabled(true);
+      jQtyLaici.setText(" ");
     }//GEN-LAST:event_jLaiciButtonActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
         
-         // Calculation
-        
-        
+         // Read Input based on quantity
         totallaici = Double.parseDouble(jQtyLaici.getText())*hausboom;
         totalstroberi = Double.parseDouble(jQtyStroberi.getText())*hausboom;
         totalmango = Double.parseDouble(jQtyMango.getText())*hausboom;
        totalblackcurrant= Double.parseDouble(jQtyBlackcurrent.getText())*hausboom;
         
-        
+        // Calculation
         totalprice  = totallaici+totalstroberi+totalmango+totalblackcurrant;
         tax = totalprice*0.15;
         finalprice = totalprice + tax;
         
        
-        
+        //Decimal Format
         txtTax = df.format(tax);
         txtSubtotal = df.format(totalprice);
         txtFinalPrice = df.format(finalprice);
         
+        //Display in Text File
         jTotalTax.setText(txtTax);
         jSubtotal.setText(txtSubtotal);
         jTotalPrice.setText(txtFinalPrice);
