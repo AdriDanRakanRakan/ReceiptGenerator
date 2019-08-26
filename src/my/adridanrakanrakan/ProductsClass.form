@@ -27,7 +27,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jProduct" max="32767" attributes="0"/>
                   <Component id="jQtyPanel" max="32767" attributes="0"/>
@@ -47,7 +47,7 @@
                       <Component id="jProduct" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="jQtyPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="234" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="305" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jReceiptPanel" max="32767" attributes="0"/>
               </Group>
@@ -78,7 +78,7 @@
                   <Component id="jMangoButton" min="-2" pref="218" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jBlackcurrentButton" min="-2" pref="218" max="-2" attributes="0"/>
-                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -101,7 +101,7 @@
         <Component class="javax.swing.JButton" name="jLaiciButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/my/adridanrakanrakan/laici.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/res/img/laici.png"/>
             </Property>
           </Properties>
           <Events>
@@ -111,7 +111,7 @@
         <Component class="javax.swing.JButton" name="jStrawberryButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/my/adridanrakanrakan/stroberi.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/res/img/stroberi.png"/>
             </Property>
           </Properties>
           <Events>
@@ -121,7 +121,7 @@
         <Component class="javax.swing.JButton" name="jMangoButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/my/adridanrakanrakan/pelam.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/res/img/pelam.png"/>
             </Property>
           </Properties>
           <Events>
@@ -131,7 +131,7 @@
         <Component class="javax.swing.JButton" name="jBlackcurrentButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/my/adridanrakanrakan/anggot.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/res/img/anggot.png"/>
             </Property>
           </Properties>
           <Events>
@@ -374,7 +374,7 @@
             <Component class="javax.swing.JButton" name="jClearLaici">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/adridanrakanrakan/clear (1).png"/>
+                  <Image iconType="3" name="/my/adridanrakanrakan/res/img/clear.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -461,7 +461,7 @@
             <Component class="javax.swing.JButton" name="jClearStroberi">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/adridanrakanrakan/clear (1).png"/>
+                  <Image iconType="3" name="/my/adridanrakanrakan/res/img/clear.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -548,7 +548,7 @@
             <Component class="javax.swing.JButton" name="jClearMango">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/adridanrakanrakan/clear (1).png"/>
+                  <Image iconType="3" name="/my/adridanrakanrakan/res/img/clear.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -637,7 +637,7 @@
             <Component class="javax.swing.JButton" name="jClearBlackcurrant">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/adridanrakanrakan/clear (1).png"/>
+                  <Image iconType="3" name="/my/adridanrakanrakan/res/img/clear.png"/>
                 </Property>
               </Properties>
               <Events>

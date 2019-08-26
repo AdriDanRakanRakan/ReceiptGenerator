@@ -77,28 +77,28 @@ public class ProductsClass extends javax.swing.JFrame {
 
         jProduct.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
 
-        jLaiciButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/laici.png"))); // NOI18N
+        jLaiciButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/laici.png"))); // NOI18N
         jLaiciButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jLaiciButtonActionPerformed(evt);
             }
         });
 
-        jStrawberryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/stroberi.png"))); // NOI18N
+        jStrawberryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/stroberi.png"))); // NOI18N
         jStrawberryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jStrawberryButtonActionPerformed(evt);
             }
         });
 
-        jMangoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/pelam.png"))); // NOI18N
+        jMangoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/pelam.png"))); // NOI18N
         jMangoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMangoButtonActionPerformed(evt);
             }
         });
 
-        jBlackcurrentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/anggot.png"))); // NOI18N
+        jBlackcurrentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/anggot.png"))); // NOI18N
         jBlackcurrentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBlackcurrentButtonActionPerformed(evt);
@@ -118,7 +118,7 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addComponent(jMangoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBlackcurrentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jProductLayout.setVerticalGroup(
             jProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +209,7 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jClearLaici.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearLaici.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/clear.png"))); // NOI18N
         jClearLaici.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jClearLaiciActionPerformed(evt);
@@ -271,7 +271,7 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jClearStroberi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearStroberi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/clear.png"))); // NOI18N
         jClearStroberi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jClearStroberiActionPerformed(evt);
@@ -331,7 +331,7 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jClearMango.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearMango.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/clear.png"))); // NOI18N
         jClearMango.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jClearMangoActionPerformed(evt);
@@ -390,7 +390,7 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jClearBlackcurrant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearBlackcurrant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/clear.png"))); // NOI18N
         jClearBlackcurrant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jClearBlackcurrantActionPerformed(evt);
@@ -469,7 +469,7 @@ public class ProductsClass extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jQtyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -486,7 +486,7 @@ public class ProductsClass extends javax.swing.JFrame {
                         .addComponent(jProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(jQtyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 234, Short.MAX_VALUE))
+                        .addGap(0, 305, Short.MAX_VALUE))
                     .addComponent(jReceiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(83, 83, 83))
         );

@@ -161,7 +161,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createimportBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createimportBtnMouseClicked
-        new CreateImportClass().setVisible(true); //pop-up create import file menu
+        //new CreateImportClass().setVisible(true); //pop-up create import file menu
     }//GEN-LAST:event_createimportBtnMouseClicked
 
     private void newquotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newquotBtnMouseClicked
