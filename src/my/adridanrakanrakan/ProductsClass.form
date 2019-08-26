@@ -341,6 +341,7 @@
                   </AccessibilityProperties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jQtyLaiciActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jQtyLaiciKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jClearLaici">
@@ -421,6 +422,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jQtyStroberiActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jQtyStroberiKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jClearStroberi">
@@ -501,6 +503,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jQtyMangoActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jQtyMangoKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jClearMango">
@@ -581,6 +584,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jQtyBlackcurrentActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jQtyBlackcurrentKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jClearBlackcurrant">

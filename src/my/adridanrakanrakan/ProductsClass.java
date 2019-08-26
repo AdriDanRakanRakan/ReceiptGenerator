@@ -9,6 +9,7 @@ package my.adridanrakanrakan;
  *
  * @author ayieb
  */
+import java.awt.event.KeyEvent;
 import java.util.*;
 import java.text.*;
 import java.lang.*;
@@ -161,6 +162,11 @@ public class ProductsClass extends javax.swing.JFrame {
                 jQtyLaiciActionPerformed(evt);
             }
         });
+        jQtyLaici.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jQtyLaiciKeyTyped(evt);
+            }
+        });
 
         jClearLaici.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/clear.png"))); // NOI18N
         jClearLaici.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +215,11 @@ public class ProductsClass extends javax.swing.JFrame {
         jQtyStroberi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jQtyStroberiActionPerformed(evt);
+            }
+        });
+        jQtyStroberi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jQtyStroberiKeyTyped(evt);
             }
         });
 
@@ -261,6 +272,11 @@ public class ProductsClass extends javax.swing.JFrame {
                 jQtyMangoActionPerformed(evt);
             }
         });
+        jQtyMango.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jQtyMangoKeyTyped(evt);
+            }
+        });
 
         jClearMango.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/clear.png"))); // NOI18N
         jClearMango.addActionListener(new java.awt.event.ActionListener() {
@@ -309,6 +325,11 @@ public class ProductsClass extends javax.swing.JFrame {
         jQtyBlackcurrent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jQtyBlackcurrentActionPerformed(evt);
+            }
+        });
+        jQtyBlackcurrent.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jQtyBlackcurrentKeyTyped(evt);
             }
         });
 
@@ -684,6 +705,45 @@ public class ProductsClass extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBackActionPerformed
 
+    private void jQtyLaiciKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyLaiciKeyTyped
+         // Only input INT
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jQtyLaiciKeyTyped
+
+    private void jQtyStroberiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyStroberiKeyTyped
+                // Only input INT
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jQtyStroberiKeyTyped
+
+    private void jQtyMangoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyMangoKeyTyped
+        // Only input INT   
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jQtyMangoKeyTyped
+
+    private void jQtyBlackcurrentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyBlackcurrentKeyTyped
+                // Only input INT
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jQtyBlackcurrentKeyTyped
+
+                                    
+
+                                         
     /**
      * @param args the command line arguments
      */
