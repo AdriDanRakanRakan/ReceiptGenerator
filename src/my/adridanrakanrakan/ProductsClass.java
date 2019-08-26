@@ -29,8 +29,7 @@ public class ProductsClass extends javax.swing.JFrame {
     double hausboom = 2.00;
     String  txtTax, txtFinalPrice,txtSubtotal ;
     double totallaici, totalmango, totalstroberi, totalblackcurrant, totalprice,tax,finalprice;
-    
-    
+    int qtyLaici = 0, qtyMango = 0, qtyStroberi = 0, qtyBlackcurrant = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -274,7 +273,7 @@ public class ProductsClass extends javax.swing.JFrame {
         });
         jQtyMango.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jQtyMangoKeyTyped(evt);
+                mangoInt(evt);
             }
         });
 
@@ -322,14 +321,12 @@ public class ProductsClass extends javax.swing.JFrame {
 
         jQtyBlackcurrent.setText("0");
         jQtyBlackcurrent.setEnabled(false);
-        jQtyBlackcurrent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jQtyBlackcurrentActionPerformed(evt);
-            }
-        });
         jQtyBlackcurrent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jQtyBlackcurrentKeyTyped(evt);
+            }
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jQtyBlackcurrentKeyPressed(evt);
             }
         });
 
@@ -430,7 +427,7 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jQtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jQtyPanelLayout.createSequentialGroup()
-                        .addComponent(jQtyBlackcurrantPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jQtyBlackcurrantPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jQtyPanelLayout.createSequentialGroup()
                         .addGroup(jQtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -573,66 +570,82 @@ public class ProductsClass extends javax.swing.JFrame {
    
     }//GEN-LAST:event_jQtyMangoActionPerformed
  
-    private void jQtyBlackcurrentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQtyBlackcurrentActionPerformed
-  
-    }//GEN-LAST:event_jQtyBlackcurrentActionPerformed
-
     private void jQtyLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQtyLaiciActionPerformed
        // TODO add your handling code here:
     }//GEN-LAST:event_jQtyLaiciActionPerformed
 
     private void jClearLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearLaiciActionPerformed
-        jQtyLaici.setText(" ");
+       jQtyLaici.setText("");
+       jQtyLaici.setEnabled(false);
+       qtyLaici = 0;
+       calculateTotal();
         
     }//GEN-LAST:event_jClearLaiciActionPerformed
 
     private void jClearStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearStroberiActionPerformed
-        jQtyStroberi.setText(" ");
-        
+        jQtyStroberi.setText("");
+       jQtyStroberi.setEnabled(false);
+       qtyStroberi = 0;
+       calculateTotal();
     }//GEN-LAST:event_jClearStroberiActionPerformed
 
     private void jClearMangoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearMangoActionPerformed
-      jQtyMango.setText(" ");
-    
+        jQtyMango.setText("");
+       jQtyMango.setEnabled(false);
+       qtyMango = 0;
+       calculateTotal();
     }//GEN-LAST:event_jClearMangoActionPerformed
 
     private void jClearBlackcurrantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearBlackcurrantActionPerformed
-        jQtyBlackcurrent.setText(" ");
+        jQtyBlackcurrent.setText("");
+       jQtyBlackcurrent.setEnabled(false);
+       qtyBlackcurrant = 0;
+       calculateTotal();
        
     }//GEN-LAST:event_jClearBlackcurrantActionPerformed
        //COUNT BLACKCURRANT QTY BASED ON CLICK
      
     private void jBlackcurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlackcurrentButtonActionPerformed
         //Enable Quantity Textfield
+      qtyBlackcurrant = qtyBlackcurrant + 1;
+      
       jQtyBlackcurrent.setEnabled(true);
-      jQtyBlackcurrent.setText(" ");
+      jQtyBlackcurrent.setText(String.valueOf(qtyBlackcurrant));
+      calculateTotal();
     }//GEN-LAST:event_jBlackcurrentButtonActionPerformed
 
     private void jMangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMangoButtonActionPerformed
         //Enable Quantity Textfield
+      qtyMango = qtyMango + 1;
+      
       jQtyMango.setEnabled(true);
-        jQtyMango.setText(" ");
+      jQtyMango.setText(String.valueOf(qtyMango));
+      calculateTotal();
     }//GEN-LAST:event_jMangoButtonActionPerformed
 
     private void jStrawberryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStrawberryButtonActionPerformed
         //Enable Quantity Textfield
+      qtyStroberi = qtyStroberi + 1;
+      
       jQtyStroberi.setEnabled(true);
-       jQtyStroberi.setText(" ");
+      jQtyStroberi.setText(String.valueOf(qtyStroberi));
+      calculateTotal();
     }//GEN-LAST:event_jStrawberryButtonActionPerformed
 
     private void jLaiciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLaiciButtonActionPerformed
         //Enable Quantity Textfield
+      qtyLaici = qtyLaici + 1;
+      
       jQtyLaici.setEnabled(true);
-      jQtyLaici.setText(" ");
+      jQtyLaici.setText(String.valueOf(qtyLaici));
+      calculateTotal();
     }//GEN-LAST:event_jLaiciButtonActionPerformed
 
-    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        
-         // Read Input based on quantity
-        totallaici = Double.parseDouble(jQtyLaici.getText())*hausboom;
-        totalstroberi = Double.parseDouble(jQtyStroberi.getText())*hausboom;
-        totalmango = Double.parseDouble(jQtyMango.getText())*hausboom;
-       totalblackcurrant= Double.parseDouble(jQtyBlackcurrent.getText())*hausboom;
+    private void calculateTotal() {
+        totallaici = qtyLaici*hausboom;
+        totalstroberi = qtyStroberi*hausboom;
+        totalmango = qtyMango*hausboom;
+       totalblackcurrant= qtyBlackcurrant*hausboom;
         
         // Calculation
         totalprice  = totallaici+totalstroberi+totalmango+totalblackcurrant;
@@ -649,6 +662,11 @@ public class ProductsClass extends javax.swing.JFrame {
         jTotalTax.setText(txtTax);
         jSubtotal.setText(txtSubtotal);
         jTotalPrice.setText(txtFinalPrice);
+    }
+    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
+        
+         // Read Input based on quantity
+         calculateTotal();
         
         ///////////////////////////////////////
         //Reference Number
@@ -711,37 +729,57 @@ public class ProductsClass extends javax.swing.JFrame {
         if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
+        } else if (!jQtyLaici.getText().equals("")) {
+            qtyLaici = Integer.parseInt(jQtyLaici.getText());
+            jQtyLaici.setText(String.valueOf(qtyLaici));
+    
         }
     }//GEN-LAST:event_jQtyLaiciKeyTyped
 
     private void jQtyStroberiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyStroberiKeyTyped
                 // Only input INT
         char c = evt.getKeyChar();
-        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+        if( !(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
+        } else if (!jQtyStroberi.getText().equals("")) {
+            int current = Integer.parseInt(jQtyStroberi.getText());
+            jQtyStroberi.setText(String.valueOf(current));
+         
         }
     }//GEN-LAST:event_jQtyStroberiKeyTyped
 
-    private void jQtyMangoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyMangoKeyTyped
-        // Only input INT   
+    private void mangoInt(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mangoInt
         char c = evt.getKeyChar();
         if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
+        } else if (!jQtyMango.getText().equals("")) {
+            qtyMango = Integer.parseInt(jQtyMango.getText());
+            jQtyMango.setText(String.valueOf(qtyMango));
+     
         }
-    }//GEN-LAST:event_jQtyMangoKeyTyped
+        
+    }//GEN-LAST:event_mangoInt
+
+    private void jQtyBlackcurrentKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyBlackcurrentKeyPressed
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        } else if (!jQtyBlackcurrent.getText().equals("")) {
+            System.out.println("aa");
+            qtyBlackcurrant = Integer.parseInt(jQtyBlackcurrent.getText());
+            jQtyBlackcurrent.setText(String.valueOf(qtyBlackcurrant));
+
+        }
+    }//GEN-LAST:event_jQtyBlackcurrentKeyPressed
 
     private void jQtyBlackcurrentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyBlackcurrentKeyTyped
-                // Only input INT
-        char c = evt.getKeyChar();
-        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
-          getToolkit().beep();
-          evt.consume();
-        }
+        // TODO add your handling code here:
+        calculateTotal();
     }//GEN-LAST:event_jQtyBlackcurrentKeyTyped
-
-                                    
+                       
 
                                          
     /**
