@@ -557,6 +557,33 @@ public class ProductsClass extends javax.swing.JFrame {
         jTotalTax.setText(txtTax);
         jSubtotal.setText(txtSubtotal);
         jTotalPrice.setText(txtFinalPrice);
+        
+        ///////////////////////////////////////
+        //Reference Number
+        //========================================================
+        Calendar timer = Calendar.getInstance();
+        timer.getTime();
+        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");
+        tTime.format(timer.getTime());
+        SimpleDateFormat Tdate = new SimpleDateFormat ("dd=MMM=yyy");
+        Tdate.format(timer.getTime());
+        //=========================================================
+        jReceipt.append("\t Haus Boom Orders \n" 
+                + "Reference:\t\t\t\t"
+                +"\n===========================================\t"+
+                    "\n===============================================\t"+
+                "\nLaici:\t\t"+jQtyLaici.getText()+
+                "\nStrawberry:\t\t"+jQtyStroberi.getText()+
+                "\nMango:\t\t"+jQtyMango.getText()+
+                "\nBlackcurrant:\t\t"+jQtyBlackcurrent.getText()+
+                "\n================================================\t"+
+                    "\nTax:\t\t"+txtTax+
+                    "\nSub Total:\t\t"+txtSubtotal+
+                    "\nTotal Price:\t\t"+txtFinalPrice+
+                    "\n================================================\t"+
+                    "\nDate: "+Tdate.format(timer.getTime())+
+                        "\t\tTime: "+tTime.format(timer.getTime())+
+                    "\n\n\t THANK YOU FOR SHOPPING WITH HAUS BOOM !");
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
