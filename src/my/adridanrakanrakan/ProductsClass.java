@@ -14,6 +14,14 @@ import java.util.*;
 import java.text.*;
 import java.lang.*;
 import javax.swing.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONValue;
+import java.io.*;  
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class ProductsClass extends javax.swing.JFrame {
 
     /**
@@ -307,9 +315,9 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addGroup(jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jClearMango)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jQtyBlackcurrantPanel.setBackground(new java.awt.Color(0, 153, 255));
@@ -321,10 +329,14 @@ public class ProductsClass extends javax.swing.JFrame {
 
         jQtyBlackcurrent.setText("0");
         jQtyBlackcurrent.setEnabled(false);
-        jQtyBlackcurrent.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jQtyBlackcurrentKeyTyped(evt);
+        jQtyBlackcurrent.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jQtyBlackcurrentInputMethodTextChanged(evt);
             }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
+        jQtyBlackcurrent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jQtyBlackcurrentKeyPressed(evt);
             }
@@ -673,10 +685,32 @@ public class ProductsClass extends javax.swing.JFrame {
         //========================================================
         Calendar timer = Calendar.getInstance();
         timer.getTime();
+        
         SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");
         tTime.format(timer.getTime());
         SimpleDateFormat Tdate = new SimpleDateFormat ("dd=MMM=yyy");
         Tdate.format(timer.getTime());
+        
+        
+        JSONObject sale = new JSONObject();
+        
+        // 0 - laici
+        // 1 - stroberi
+        // 2 - mango
+        // 3 - blackcurrant
+        int[] products = {qtyLaici, qtyStroberi, qtyMango, qtyBlackcurrant};
+        
+        sale.put("products",  Arrays.toString(products));
+        StringWriter out = new StringWriter();
+        try {
+            sale.writeJSONString(out);
+        } catch (IOException ex) {
+            Logger.getLogger(ProductsClass.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+        String jsonText = out.toString();
+        System.out.print(jsonText);
+        
         //=========================================================
         jReceipt.append("\t Haus Boom Orders \n" 
                 + "Reference:\t\t\t\t"
@@ -768,17 +802,14 @@ public class ProductsClass extends javax.swing.JFrame {
           getToolkit().beep();
           evt.consume();
         } else if (!jQtyBlackcurrent.getText().equals("")) {
-            System.out.println("aa");
             qtyBlackcurrant = Integer.parseInt(jQtyBlackcurrent.getText());
             jQtyBlackcurrent.setText(String.valueOf(qtyBlackcurrant));
-
         }
     }//GEN-LAST:event_jQtyBlackcurrentKeyPressed
 
-    private void jQtyBlackcurrentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jQtyBlackcurrentKeyTyped
+    private void jQtyBlackcurrentInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jQtyBlackcurrentInputMethodTextChanged
         // TODO add your handling code here:
-        calculateTotal();
-    }//GEN-LAST:event_jQtyBlackcurrentKeyTyped
+    }//GEN-LAST:event_jQtyBlackcurrentInputMethodTextChanged
                        
 
                                          

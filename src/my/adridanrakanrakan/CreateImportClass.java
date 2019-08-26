@@ -207,7 +207,7 @@ public class CreateImportClass extends javax.swing.JFrame {
           String filePath = fd.getDirectory() + fd.getFile();
           finalP = filePath;
           System.out.println("You chose " + filePath);
-          filePathDisplay.setText(filePath);
+          //filePathDisplay.setText(filePath);
         }
     }//GEN-LAST:event_locateFileActionPerformed
 
@@ -217,27 +217,29 @@ public class CreateImportClass extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueBtnActionPerformed
-        if (mode == 1) {
-            // create new file
-            FileDialog fd = new FileDialog(this, "Choose where to save", FileDialog.SAVE);
-            fd.setDirectory(System.getProperty("user.home"));
-    //        fd.setFile("*.json");
-            fd.setVisible(true);
-            String filename = fd.getFile();
-            if (filename == null) {
-              continueBtn.setEnabled(false);
-              filePathDisplay.setText("");
-              System.out.println("You cancelled the choice");
-            } else {
-              continueBtn.setEnabled(true);
-              String filePath = fd.getDirectory() + fd.getFile();
-              finalP = filePath;
-              System.out.println("You chose " + filePath);
-              filePathDisplay.setText(filePath);
-            }
-        } else {
-            // load the current file from directory
-        }
+//        if (mode == 1) {
+//            // create new file
+//            FileDialog fd = new FileDialog(this, "Choose where to save", FileDialog.SAVE);
+//            fd.setDirectory(System.getProperty("user.home"));
+//    //        fd.setFile("*.json");
+//            fd.setVisible(true);
+//            String filename = fd.getFile();
+//            if (filename == null) {
+//              continueBtn.setEnabled(false);
+//              filePathDisplay.setText("");
+//              System.out.println("You cancelled the choice");
+//            } else {
+//              continueBtn.setEnabled(true);
+//              String filePath = fd.getDirectory() + fd.getFile();
+//              finalP = filePath;
+//              System.out.println("You chose " + filePath);
+//              filePathDisplay.setText(filePath);
+//            }
+//        } else {
+//            // load the current file from directory
+//        }
+        this.setVisible(false);
+        new Menu().setVisible(true);
     }//GEN-LAST:event_continueBtnActionPerformed
 
     /**
