@@ -27,6 +27,10 @@ public class WelcomeClass extends javax.swing.JFrame {
     /**
      * Creates new form WelcomeClass
      */
+    
+    int mode = 1;
+    String finalP = "";
+    
     public WelcomeClass() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -86,6 +90,11 @@ public class WelcomeClass extends javax.swing.JFrame {
 
         continueBtn.setText("Continue");
         continueBtn.setToolTipText("");
+        continueBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                continueBtnActionPerformed(evt);
+            }
+        });
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -105,12 +114,12 @@ public class WelcomeClass extends javax.swing.JFrame {
                     .addComponent(jRadioButton1)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(continueBtn)
+                            .addComponent(exitBtn)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(exitBtn))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(continueBtn))
+                        .addGroup(layout.createSequentialGroup()
                             .addComponent(filePathDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(locateFile, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -146,18 +155,20 @@ public class WelcomeClass extends javax.swing.JFrame {
         locateFile.setEnabled(false);
         filePathDisplay.setText("");
         continueBtn.setEnabled(true);
+        mode = 1;
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
         locateFile.setEnabled(true);
         continueBtn.setEnabled(false);
+        mode = 2;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void locateFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locateFileActionPerformed
         FileDialog fd = new FileDialog(this, "Choose a file", FileDialog.LOAD);
         fd.setDirectory(System.getProperty("user.home"));
-        fd.setFile("*.json");
+//        fd.setFile("*.json");
         fd.setVisible(true);
         String filename = fd.getFile();
         if (filename == null) {
@@ -167,6 +178,7 @@ public class WelcomeClass extends javax.swing.JFrame {
         } else {
           continueBtn.setEnabled(true);
           String filePath = fd.getDirectory() + fd.getFile();
+          finalP = filePath;
           System.out.println("You chose " + filePath);
           filePathDisplay.setText(filePath);
         }
@@ -175,6 +187,30 @@ public class WelcomeClass extends javax.swing.JFrame {
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueBtnActionPerformed
+        if (mode == 1) {
+            // create new file
+            FileDialog fd = new FileDialog(this, "Choose where to save", FileDialog.SAVE);
+            fd.setDirectory(System.getProperty("user.home"));
+    //        fd.setFile("*.json");
+            fd.setVisible(true);
+            String filename = fd.getFile();
+            if (filename == null) {
+              continueBtn.setEnabled(false);
+              filePathDisplay.setText("");
+              System.out.println("You cancelled the choice");
+            } else {
+              continueBtn.setEnabled(true);
+              String filePath = fd.getDirectory() + fd.getFile();
+              finalP = filePath;
+              System.out.println("You chose " + filePath);
+              filePathDisplay.setText(filePath);
+            }
+        } else {
+            // load the current file from directory
+        }
+    }//GEN-LAST:event_continueBtnActionPerformed
 
     /**
      * @param args the command line arguments
