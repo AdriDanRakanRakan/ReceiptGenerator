@@ -27,8 +27,13 @@ public class ProductsClass extends javax.swing.JFrame {
     /**
      * Creates new form ProductsClass
      */
-    public ProductsClass() {
+    
+    CreateImportClass MainClass;
+    
+    public ProductsClass(CreateImportClass x) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        MainClass = x;
     }
     
     DecimalFormat df = new DecimalFormat ("0.00");
@@ -692,24 +697,7 @@ public class ProductsClass extends javax.swing.JFrame {
         Tdate.format(timer.getTime());
         
         
-        JSONObject sale = new JSONObject();
-        
-        // 0 - laici
-        // 1 - stroberi
-        // 2 - mango
-        // 3 - blackcurrant
-        int[] products = {qtyLaici, qtyStroberi, qtyMango, qtyBlackcurrant};
-        
-        sale.put("products",  Arrays.toString(products));
-        StringWriter out = new StringWriter();
-        try {
-            sale.writeJSONString(out);
-        } catch (IOException ex) {
-            Logger.getLogger(ProductsClass.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      
-        String jsonText = out.toString();
-        System.out.print(jsonText);
+        MainClass.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, totalprice, finalprice, timer);
         
         //=========================================================
         jReceipt.append("\t Haus Boom Orders \n" 
@@ -750,7 +738,9 @@ public class ProductsClass extends javax.swing.JFrame {
     }//GEN-LAST:event_jSubmitMouseClicked
 
     private void jBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBackMouseClicked
-        new Menu().setVisible(true); dispose(); //go back to menu
+        new Menu(MainClass).setVisible(true);
+        
+        dispose(); //go back to menu
     }//GEN-LAST:event_jBackMouseClicked
 
     private void jBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBackActionPerformed
@@ -841,11 +831,11 @@ public class ProductsClass extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProductsClass().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new ProductsClass().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -14,9 +14,13 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    
+    CreateImportClass MainClass;
+    
+    public Menu(CreateImportClass x) {
         initComponents();
         this.setLocationRelativeTo(null);
+        MainClass = x;
     }
 
     /**
@@ -78,6 +82,11 @@ public class Menu extends javax.swing.JFrame {
         newquotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 newquotBtnMouseClicked(evt);
+            }
+        });
+        newquotBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newquotBtnActionPerformed(evt);
             }
         });
 
@@ -179,8 +188,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_createimportBtnMouseClicked
 
     private void newquotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newquotBtnMouseClicked
-        new ProductsClass() .setVisible(true); dispose();  // navigate to product class form
+        //new ProductsClass(MainClass) .setVisible(true); dispose();  // navigate to product class form
     }//GEN-LAST:event_newquotBtnMouseClicked
+
+    private void newquotBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newquotBtnActionPerformed
+               this.setVisible(false);
+                new ProductsClass(MainClass).setVisible(true);
+    }//GEN-LAST:event_newquotBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,12 +220,12 @@ public class Menu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-    }
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Menu().setVisible(true);
+//            }
+//        });
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createimportBtn;

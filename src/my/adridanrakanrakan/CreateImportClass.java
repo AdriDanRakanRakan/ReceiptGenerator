@@ -23,6 +23,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import org.apache.commons.io.IOUtils;
+import java.util.*; 
 
 import java.awt.*;
 import java.awt.event.*;
@@ -259,27 +260,29 @@ public class CreateImportClass extends javax.swing.JFrame {
               
             JSONObject sales = new JSONObject();
             
-            JSONObject sale1 = new JSONObject();
-            
-            sale1.put("mango", 0);
-            sale1.put("laici", 0);
-            sale1.put("stroberi", 0);
-            sale1.put("blackcurrant", 0);
-            sale1.put("tax", 0);
-            sale1.put("subtotal", 0);
-            sale1.put("totalprice", 0);
-            
-            sales.put(0, sale1);
-            
             data = new JSONObject();
             data.put("sales", sales);
+            
+//            JSONObject salesx = data.getJSONObject("sales");
+//            JSONObject sale2 = new JSONObject();
+//            
+//            sale2.put("mango", 0);
+//            sale2.put("laici", 0);
+//            sale2.put("stroberi", 0);
+//            sale2.put("blackcurrant", 0);
+//            sale2.put("tax", 0);
+//            sale2.put("subtotal", 0);
+//            sale2.put("totalprice", 0);
+//            
+//            sales.put(1, sale2);
+//            data.put("sales", sales);
             data.put("current_sale_id", 0);
             System.out.println(data);
             
             saveChanges();
             
                 this.setVisible(false);
-                new Menu().setVisible(true);
+                new Menu(this).setVisible(true);
             }
         } else {
             System.out.println("aa");
@@ -299,13 +302,37 @@ public class CreateImportClass extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Invalid data file.", "Oops", JOptionPane.ERROR_MESSAGE);
                 }
                  
+                int current_sale_idx = ((Long) data.get("current_sale_id")).intValue();
+                System.out.println(current_sale_idx);
+                
                 this.setVisible(false);
-                new Menu().setVisible(true);
+                new Menu(this).setVisible(true);
              }
         }
 
     }//GEN-LAST:event_continueBtnActionPerformed
 
+    public void addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer) {
+            
+        JSONObject sales = (JSONObject) data.get("sales");
+                
+        JSONObject sale1 = new JSONObject();
+            
+        sale1.put("mango", totalmango);
+        sale1.put("laici", totallaici);
+        sale1.put("stroberi", totalstroberi);
+        sale1.put("blackcurrant", totalblackcurrant);
+        sale1.put("tax", tax);
+        sale1.put("subtotal", totalprice);
+        sale1.put("totalprice", finalprice);
+         
+        current_sale_id++;
+        sales.put(current_sale_id, sale1);
+        data.put("current_sale_id", current_sale_id);
+        data.put("sales", sales);
+        
+        saveChanges();    
+    }
     /**
      * @param args the command line arguments
      */
