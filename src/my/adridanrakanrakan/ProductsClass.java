@@ -30,27 +30,11 @@ public class ProductsClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        jFrame2 = new javax.swing.JFrame();
-        jFrame3 = new javax.swing.JFrame();
-        jFrame4 = new javax.swing.JFrame();
         jProduct = new javax.swing.JPanel();
         jLaiciButton = new javax.swing.JButton();
         jStrawberryButton = new javax.swing.JButton();
         jMangoButton = new javax.swing.JButton();
         jBlackcurrentButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jQtyStroberi = new javax.swing.JTextField();
-        jQtyMango = new javax.swing.JTextField();
-        jQtyBlackcurrent = new javax.swing.JTextField();
-        jQtyLaici = new javax.swing.JTextField();
-        jClearLaici = new javax.swing.JButton();
-        jClearMango = new javax.swing.JButton();
-        jClearStroberi = new javax.swing.JButton();
-        jClearBlackcurrant = new javax.swing.JButton();
         jReceiptPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jReceipt = new javax.swing.JTextArea();
@@ -60,50 +44,23 @@ public class ProductsClass extends javax.swing.JFrame {
         jTotalTax = new javax.swing.JTextField();
         jSubtotal = new javax.swing.JTextField();
         jTotalPrice = new javax.swing.JTextField();
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
-        jFrame2.getContentPane().setLayout(jFrame2Layout);
-        jFrame2Layout.setHorizontalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame2Layout.setVerticalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
-        jFrame3.getContentPane().setLayout(jFrame3Layout);
-        jFrame3Layout.setHorizontalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame3Layout.setVerticalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame4Layout = new javax.swing.GroupLayout(jFrame4.getContentPane());
-        jFrame4.getContentPane().setLayout(jFrame4Layout);
-        jFrame4Layout.setHorizontalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame4Layout.setVerticalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jQtyPanel = new javax.swing.JPanel();
+        jQtyLycheePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jQtyLaici = new javax.swing.JTextField();
+        jClearLaici = new javax.swing.JButton();
+        jqtyStrawberryPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jQtyStroberi = new javax.swing.JTextField();
+        jClearStroberi = new javax.swing.JButton();
+        jQtyMangoPanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jQtyMango = new javax.swing.JTextField();
+        jClearMango = new javax.swing.JButton();
+        jQtyBlackcurrantPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jQtyBlackcurrent = new javax.swing.JTextField();
+        jClearBlackcurrant = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -164,75 +121,6 @@ public class ProductsClass extends javax.swing.JFrame {
                     .addComponent(jBlackcurrentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Quantity:");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Quantity:");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Quantity:");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Quantity:");
-
-        jQtyStroberi.setText("jTextField1");
-        jQtyStroberi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jQtyStroberiActionPerformed(evt);
-            }
-        });
-
-        jQtyMango.setText("jTextField1");
-        jQtyMango.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jQtyMangoActionPerformed(evt);
-            }
-        });
-
-        jQtyBlackcurrent.setText("jTextField1");
-        jQtyBlackcurrent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jQtyBlackcurrentActionPerformed(evt);
-            }
-        });
-
-        jQtyLaici.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jQtyLaici.setText("jTextField1");
-        jQtyLaici.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jQtyLaiciActionPerformed(evt);
-            }
-        });
-
-        jClearLaici.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
-        jClearLaici.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jClearLaiciActionPerformed(evt);
-            }
-        });
-
-        jClearMango.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
-        jClearMango.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jClearMangoActionPerformed(evt);
-            }
-        });
-
-        jClearStroberi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
-        jClearStroberi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jClearStroberiActionPerformed(evt);
-            }
-        });
-
-        jClearBlackcurrant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
-        jClearBlackcurrant.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jClearBlackcurrantActionPerformed(evt);
-            }
-        });
 
         jReceiptPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
@@ -295,78 +183,256 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
+        jQtyPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+
+        jQtyLycheePanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Lychee:");
+
+        jQtyLaici.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jQtyLaici.setText("jTextField1");
+        jQtyLaici.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jQtyLaiciActionPerformed(evt);
+            }
+        });
+
+        jClearLaici.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearLaici.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jClearLaiciActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jQtyLycheePanelLayout = new javax.swing.GroupLayout(jQtyLycheePanel);
+        jQtyLycheePanel.setLayout(jQtyLycheePanelLayout);
+        jQtyLycheePanelLayout.setHorizontalGroup(
+            jQtyLycheePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyLycheePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jQtyLycheePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jClearLaici)
+                .addGap(54, 54, 54))
+        );
+        jQtyLycheePanelLayout.setVerticalGroup(
+            jQtyLycheePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyLycheePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jQtyLycheePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jClearLaici)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jQtyLaici.getAccessibleContext().setAccessibleName("");
+        jQtyLaici.getAccessibleContext().setAccessibleDescription("");
+
+        jqtyStrawberryPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Strawberry:");
+
+        jQtyStroberi.setText("jTextField1");
+        jQtyStroberi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jQtyStroberiActionPerformed(evt);
+            }
+        });
+
+        jClearStroberi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearStroberi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jClearStroberiActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jqtyStrawberryPanelLayout = new javax.swing.GroupLayout(jqtyStrawberryPanel);
+        jqtyStrawberryPanel.setLayout(jqtyStrawberryPanelLayout);
+        jqtyStrawberryPanelLayout.setHorizontalGroup(
+            jqtyStrawberryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jqtyStrawberryPanelLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jClearStroberi)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jqtyStrawberryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+        jqtyStrawberryPanelLayout.setVerticalGroup(
+            jqtyStrawberryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jqtyStrawberryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jqtyStrawberryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jClearStroberi)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        jQtyMangoPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Mango:");
+
+        jQtyMango.setText("jTextField1");
+        jQtyMango.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jQtyMangoActionPerformed(evt);
+            }
+        });
+
+        jClearMango.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearMango.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jClearMangoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jQtyMangoPanelLayout = new javax.swing.GroupLayout(jQtyMangoPanel);
+        jQtyMangoPanel.setLayout(jQtyMangoPanelLayout);
+        jQtyMangoPanelLayout.setHorizontalGroup(
+            jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyMangoPanelLayout.createSequentialGroup()
+                .addGroup(jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jQtyMangoPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jQtyMangoPanelLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jClearMango)))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        jQtyMangoPanelLayout.setVerticalGroup(
+            jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyMangoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jClearMango)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jQtyBlackcurrantPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Blackcurrant:");
+
+        jQtyBlackcurrent.setText("jTextField1");
+        jQtyBlackcurrent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jQtyBlackcurrentActionPerformed(evt);
+            }
+        });
+
+        jClearBlackcurrant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/clear (1).png"))); // NOI18N
+        jClearBlackcurrant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jClearBlackcurrantActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jQtyBlackcurrantPanelLayout = new javax.swing.GroupLayout(jQtyBlackcurrantPanel);
+        jQtyBlackcurrantPanel.setLayout(jQtyBlackcurrantPanelLayout);
+        jQtyBlackcurrantPanelLayout.setHorizontalGroup(
+            jQtyBlackcurrantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyBlackcurrantPanelLayout.createSequentialGroup()
+                .addGroup(jQtyBlackcurrantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jQtyBlackcurrantPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jQtyBlackcurrantPanelLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jClearBlackcurrant)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jQtyBlackcurrantPanelLayout.setVerticalGroup(
+            jQtyBlackcurrantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyBlackcurrantPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jQtyBlackcurrantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jClearBlackcurrant)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jQtyPanelLayout = new javax.swing.GroupLayout(jQtyPanel);
+        jQtyPanel.setLayout(jQtyPanelLayout);
+        jQtyPanelLayout.setHorizontalGroup(
+            jQtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jQtyLycheePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jqtyStrawberryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jQtyMangoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(jQtyBlackcurrantPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jQtyPanelLayout.setVerticalGroup(
+            jQtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jQtyPanelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jQtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jqtyStrawberryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyLycheePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyMangoPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyBlackcurrantPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jClearLaici))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jClearStroberi))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jClearMango))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(122, 122, 122)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jClearBlackcurrant))
-                        .addGap(18, 18, 18)
-                        .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jQtyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(267, 267, 267)
+                .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jReceiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jClearMango)
-                    .addComponent(jClearBlackcurrant)
-                    .addComponent(jClearStroberi)
-                    .addComponent(jClearLaici)))
+                        .addComponent(jProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jQtyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 245, Short.MAX_VALUE))
+                    .addComponent(jReceiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(83, 83, 83))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
-                 
+                  
    
     private void jQtyStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQtyStroberiActionPerformed
        
@@ -381,7 +447,10 @@ public class ProductsClass extends javax.swing.JFrame {
     }//GEN-LAST:event_jQtyBlackcurrentActionPerformed
 
     private void jQtyLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQtyLaiciActionPerformed
-        // TODO add your handling code here:
+jQtyLaici.setEnabled(false);        // TODO add your handling code here:
+       
+       
+        
     }//GEN-LAST:event_jQtyLaiciActionPerformed
 
     private void jClearLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearLaiciActionPerformed
@@ -393,6 +462,7 @@ public class ProductsClass extends javax.swing.JFrame {
     int countBlackcurrant = 0; 
 //COUNT LAICI QTY BASED ON CLICK
     int countLaici=0;  
+    
     private void jClearStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearStroberiActionPerformed
         jQtyStroberi.setText(" ");
         countStroberi = 0;
@@ -485,10 +555,6 @@ public class ProductsClass extends javax.swing.JFrame {
     private javax.swing.JButton jClearLaici;
     private javax.swing.JButton jClearMango;
     private javax.swing.JButton jClearStroberi;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JFrame jFrame2;
-    private javax.swing.JFrame jFrame3;
-    private javax.swing.JFrame jFrame4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -496,9 +562,13 @@ public class ProductsClass extends javax.swing.JFrame {
     private javax.swing.JButton jLaiciButton;
     private javax.swing.JButton jMangoButton;
     private javax.swing.JPanel jProduct;
+    private javax.swing.JPanel jQtyBlackcurrantPanel;
     private javax.swing.JTextField jQtyBlackcurrent;
     private javax.swing.JTextField jQtyLaici;
+    private javax.swing.JPanel jQtyLycheePanel;
     private javax.swing.JTextField jQtyMango;
+    private javax.swing.JPanel jQtyMangoPanel;
+    private javax.swing.JPanel jQtyPanel;
     private javax.swing.JTextField jQtyStroberi;
     private javax.swing.JTextArea jReceipt;
     private javax.swing.JPanel jReceiptPanel;
@@ -510,5 +580,6 @@ public class ProductsClass extends javax.swing.JFrame {
     private javax.swing.JTextField jTotalPrice;
     private javax.swing.JLabel jTotalPriceLabel;
     private javax.swing.JTextField jTotalTax;
+    private javax.swing.JPanel jqtyStrawberryPanel;
     // End of variables declaration//GEN-END:variables
 }
