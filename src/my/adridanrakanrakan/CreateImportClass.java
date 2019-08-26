@@ -57,6 +57,7 @@ public class CreateImportClass extends javax.swing.JFrame {
         continueBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Create / Import Quotation");
         setBackground(new java.awt.Color(0, 153, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
