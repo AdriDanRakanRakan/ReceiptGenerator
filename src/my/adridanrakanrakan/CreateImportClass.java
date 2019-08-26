@@ -302,8 +302,8 @@ public class CreateImportClass extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Invalid data file.", "Oops", JOptionPane.ERROR_MESSAGE);
                 }
                  
-                int current_sale_idx = ((Long) data.get("current_sale_id")).intValue();
-                System.out.println(current_sale_idx);
+                current_sale_id = ((Long) data.get("current_sale_id")).intValue();
+                System.out.println(current_sale_id);
                 
                 this.setVisible(false);
                 new Menu(this).setVisible(true);
@@ -312,7 +312,7 @@ public class CreateImportClass extends javax.swing.JFrame {
 
     }//GEN-LAST:event_continueBtnActionPerformed
 
-    public void addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer) {
+    public int addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer) {
             
         JSONObject sales = (JSONObject) data.get("sales");
                 
@@ -325,13 +325,15 @@ public class CreateImportClass extends javax.swing.JFrame {
         sale1.put("tax", tax);
         sale1.put("subtotal", totalprice);
         sale1.put("totalprice", finalprice);
-         
+        
         current_sale_id++;
         sales.put(current_sale_id, sale1);
         data.put("current_sale_id", current_sale_id);
         data.put("sales", sales);
         
-        saveChanges();    
+        saveChanges();  
+        
+        return current_sale_id;
     }
     /**
      * @param args the command line arguments

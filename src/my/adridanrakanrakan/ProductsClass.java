@@ -704,11 +704,11 @@ public class ProductsClass extends javax.swing.JFrame {
         Tdate.format(timer.getTime());
         
         
-        MainClass.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, totalprice, finalprice, timer);
+        int saleId = MainClass.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, totalprice, finalprice, timer);
         
         //=========================================================
         jReceipt.append("\t Haus Boom Orders \n" 
-                + "Reference:\t\t\t\t"
+                + "Reference: HB" + String.format("%05d" , saleId) + "\t\t\t\t"
                 +"\n===========================================\t"+
                     "\n===============================================\t"+
                 "\nLaici:\t\t"+jQtyLaici.getText()+
