@@ -553,13 +553,13 @@ public class ProductsClass extends javax.swing.JFrame {
         
        
         
-        txtTax = Double.toString(tax);
-        txtSubtotal = Double.toString(totalprice);
-        txtFinalPrice = Double.toString(finalprice);
+        txtTax = df.format(tax);
+        txtSubtotal = df.format(totalprice);
+        txtFinalPrice = df.format(finalprice);
         
-        jTotalTax.setText(String.format("RM %.2f",txtTax));
-        jSubtotal.setText(String.format("RM %.2f",txtSubtotal));
-        jTotalPrice.setText(String.format("RM %.2f",txtFinalPrice));
+        jTotalTax.setText(txtTax);
+        jSubtotal.setText(txtSubtotal);
+        jTotalPrice.setText(txtFinalPrice);
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
