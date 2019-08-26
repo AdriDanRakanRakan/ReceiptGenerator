@@ -514,6 +514,7 @@ public class ProductsClass extends javax.swing.JFrame {
     private void jBlackcurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlackcurrentButtonActionPerformed
         //Enable Quantity Textfield
       jQtyBlackcurrent.setEnabled(true);
+      jQtyBlackcurrent.setText(" ");
     }//GEN-LAST:event_jBlackcurrentButtonActionPerformed
 
     private void jMangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMangoButtonActionPerformed
@@ -584,6 +585,20 @@ public class ProductsClass extends javax.swing.JFrame {
                     "\nDate: "+Tdate.format(timer.getTime())+
                         "\t\tTime: "+tTime.format(timer.getTime())+
                     "\n\n\t THANK YOU FOR SHOPPING WITH HAUS BOOM !");
+        
+        //Disable All Button after Submitted
+        jClearLaici.setEnabled(false);
+        jClearStroberi.setEnabled(false);
+        jClearMango.setEnabled(false);
+        jClearBlackcurrant.setEnabled(false);
+        jSubmit.setEnabled(false);
+        
+        //Disable All Textfield after Submitted
+        jQtyLaici.setEnabled(false);
+        jQtyStroberi.setEnabled(false);
+         jQtyMango.setEnabled(false);
+        jQtyBlackcurrent.setEnabled(false);
+        
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
