@@ -463,6 +463,7 @@ public class ProductsClass extends javax.swing.JFrame {
 
         jReceipt.setColumns(20);
         jReceipt.setRows(5);
+        jReceipt.setDisabledTextColor(new java.awt.Color(0, 153, 255));
         jReceipt.setEnabled(false);
         jScrollPane1.setViewportView(jReceipt);
 
