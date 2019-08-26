@@ -58,44 +58,46 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="74" max="-2" attributes="0"/>
-                          <Component id="jClearLaici" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jQtyLaici" min="-2" pref="46" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" alignment="1" min="-2" pref="74" max="-2" attributes="0"/>
-                          <Component id="jClearStroberi" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jQtyStroberi" min="-2" pref="46" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jClearMango" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="74" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jQtyMango" min="-2" pref="46" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="jLabel3" min="-2" pref="74" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jClearBlackcurrant" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jQtyBlackcurrent" min="-2" pref="46" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                  </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="74" max="-2" attributes="0"/>
+                  <Component id="jClearLaici" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jQtyLaici" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="74" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jClearStroberi" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jQtyStroberi" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" pref="74" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jClearMango" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jQtyMango" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" pref="74" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jClearBlackcurrant" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jQtyBlackcurrent" min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,17 +107,15 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="jQtyStroberi" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="jQtyMango" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="jQtyBlackcurrent" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="jQtyLaici" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jQtyMango" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="jQtyBlackcurrent" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="jQtyLaici" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jQtyStroberi" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -143,7 +143,7 @@
                   <Component id="jMangoButton" min="-2" pref="218" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jBlackcurrentButton" min="-2" pref="218" max="-2" attributes="0"/>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="202" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -166,7 +166,7 @@
         <Component class="javax.swing.JButton" name="jLaiciButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ayieb\Desktop\laici.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/laici.png"/>
             </Property>
           </Properties>
           <Events>
@@ -176,7 +176,7 @@
         <Component class="javax.swing.JButton" name="jStrawberryButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ayieb\Desktop\stroberi.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/stroberi.png"/>
             </Property>
           </Properties>
           <Events>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JButton" name="jMangoButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ayieb\Desktop\pelam.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/pelam.png"/>
             </Property>
           </Properties>
           <Events>
@@ -196,7 +196,7 @@
         <Component class="javax.swing.JButton" name="jBlackcurrentButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ayieb\Desktop\anggot.png"/>
+              <Image iconType="3" name="/my/adridanrakanrakan/anggot.png"/>
             </Property>
           </Properties>
           <Events>

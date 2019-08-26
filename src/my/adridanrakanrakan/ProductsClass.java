@@ -75,28 +75,28 @@ public class ProductsClass extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLaiciButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\ayieb\\Desktop\\laici.png")); // NOI18N
+        jLaiciButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/laici.png"))); // NOI18N
         jLaiciButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jLaiciButtonActionPerformed(evt);
             }
         });
 
-        jStrawberryButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\ayieb\\Desktop\\stroberi.png")); // NOI18N
+        jStrawberryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/stroberi.png"))); // NOI18N
         jStrawberryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jStrawberryButtonActionPerformed(evt);
             }
         });
 
-        jMangoButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\ayieb\\Desktop\\pelam.png")); // NOI18N
+        jMangoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/pelam.png"))); // NOI18N
         jMangoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMangoButtonActionPerformed(evt);
             }
         });
 
-        jBlackcurrentButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\ayieb\\Desktop\\anggot.png")); // NOI18N
+        jBlackcurrentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/anggot.png"))); // NOI18N
         jBlackcurrentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBlackcurrentButtonActionPerformed(evt);
@@ -116,7 +116,7 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addComponent(jMangoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBlackcurrentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,36 +204,37 @@ public class ProductsClass extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jClearLaici))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jClearLaici))
-                        .addGap(18, 18, 18)
                         .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jClearStroberi, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jClearStroberi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jClearMango)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jClearBlackcurrant))
-                        .addGap(18, 18, 18)
-                        .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(87, 87, 87))))
+                        .addGap(63, 63, 63)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jClearMango))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jClearBlackcurrant))
+                .addGap(18, 18, 18)
+                .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,16 +242,15 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jClearMango)
@@ -286,26 +286,9 @@ public class ProductsClass extends javax.swing.JFrame {
     }//GEN-LAST:event_jClearLaiciActionPerformed
 
        //COUNT BLACKCURRANT QTY BASED ON CLICK
-    int countBlackcurrant = 0;
-    private void jBlackcurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlackcurrentButtonActionPerformed
-             countBlackcurrant++;
-        String blackcurrant = Integer.toString(countBlackcurrant);
-        
-        //Send quantity to TextBox
-        jQtyBlackcurrent.setText(blackcurrant);
-    }//GEN-LAST:event_jBlackcurrentButtonActionPerformed
- 
+    int countBlackcurrant = 0; 
 //COUNT LAICI QTY BASED ON CLICK
     int countLaici=0;  
-    private void jLaiciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLaiciButtonActionPerformed
-
-        countLaici++;
-        String laici = Integer.toString(countLaici);
-
-        //Send quantity to TextBox
-        jQtyLaici.setText(laici);
-    }//GEN-LAST:event_jLaiciButtonActionPerformed
-
     private void jClearStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearStroberiActionPerformed
         jQtyStroberi.setText(" ");
         countStroberi = 0;
@@ -320,26 +303,43 @@ public class ProductsClass extends javax.swing.JFrame {
         jQtyBlackcurrent.setText(" ");
         countBlackcurrant = 0;
     }//GEN-LAST:event_jClearBlackcurrantActionPerformed
- //COUNT STRAWBERRY QTY BASED ON CLICK
-    int countStroberi = 0;
-    private void jStrawberryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStrawberryButtonActionPerformed
-        countStroberi++;
-        String stroberi = Integer.toString(countStroberi);
-        
-        //Send quantity to TextBox
-        jQtyStroberi.setText(stroberi);
-    }//GEN-LAST:event_jStrawberryButtonActionPerformed
 
-    //COUNT MANGO QTY BASED ON CLICK
-    int countMango = 0;
+    private void jBlackcurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlackcurrentButtonActionPerformed
+        countBlackcurrant++;
+        String blackcurrant = Integer.toString(countBlackcurrant);
+
+        //Send quantity to TextBox
+        jQtyBlackcurrent.setText(blackcurrant);
+    }//GEN-LAST:event_jBlackcurrentButtonActionPerformed
+
     private void jMangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMangoButtonActionPerformed
-           countMango++;
+        countMango++;
         String mango = Integer.toString(countMango);
-        
+
         //Send quantity to TextBox
         jQtyMango.setText(mango);
     }//GEN-LAST:event_jMangoButtonActionPerformed
 
+    private void jStrawberryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStrawberryButtonActionPerformed
+        countStroberi++;
+        String stroberi = Integer.toString(countStroberi);
+
+        //Send quantity to TextBox
+        jQtyStroberi.setText(stroberi);
+    }//GEN-LAST:event_jStrawberryButtonActionPerformed
+
+    private void jLaiciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLaiciButtonActionPerformed
+
+        countLaici++;
+        String laici = Integer.toString(countLaici);
+
+        //Send quantity to TextBox
+        jQtyLaici.setText(laici);
+    }//GEN-LAST:event_jLaiciButtonActionPerformed
+ //COUNT STRAWBERRY QTY BASED ON CLICK
+    int countStroberi = 0;
+    //COUNT MANGO QTY BASED ON CLICK
+    int countMango = 0;
     /**
      * @param args the command line arguments
      */
