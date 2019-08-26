@@ -10,6 +10,7 @@ package my.adridanrakanrakan;
  * @author ayieb
  */
 import java.util.*;
+import java.text.*;
 import java.lang.*;
 import javax.swing.*;
 public class ProductsClass extends javax.swing.JFrame {
@@ -21,6 +22,8 @@ public class ProductsClass extends javax.swing.JFrame {
         initComponents();
     }
     
+    DecimalFormat df = new DecimalFormat ("0.00");
+    
     //Variable Declaration
     int countLaici = 0;
     int countBlackcurrant = 0;
@@ -28,8 +31,8 @@ public class ProductsClass extends javax.swing.JFrame {
     int countMango = 0;
     
     double hausboom = 2.00;
-    String tax, subtotal,finalprice ;
-    double totalprice [] = new double [4];
+    String  txtTax, txtFinalPrice,txtSubtotal ;
+    double totallaici, totalmango, totalstroberi, totalblackcurrant, totalprice,tax,finalprice;
     
     
 
@@ -139,6 +142,7 @@ public class ProductsClass extends javax.swing.JFrame {
 
         jReceipt.setColumns(20);
         jReceipt.setRows(5);
+        jReceipt.setEnabled(false);
         jScrollPane1.setViewportView(jReceipt);
 
         jSubtotalLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -150,11 +154,17 @@ public class ProductsClass extends javax.swing.JFrame {
         jTotalPriceLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTotalPriceLabel.setText("Total:");
 
-        jTotalTax.setText("jTextField1");
+        jTotalTax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTotalTax.setText("0.00");
+        jTotalTax.setEnabled(false);
 
-        jSubtotal.setText("jTextField2");
+        jSubtotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jSubtotal.setText("0.00");
+        jSubtotal.setEnabled(false);
 
-        jTotalPrice.setText("jTextField3");
+        jTotalPrice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTotalPrice.setText("0.00");
+        jTotalPrice.setEnabled(false);
 
         javax.swing.GroupLayout jReceiptPanelLayout = new javax.swing.GroupLayout(jReceiptPanel);
         jReceiptPanel.setLayout(jReceiptPanelLayout);
@@ -419,6 +429,11 @@ public class ProductsClass extends javax.swing.JFrame {
         );
 
         jSubmit.setText("SUBMIT");
+        jSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSubmitMouseClicked(evt);
+            }
+        });
         jSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSubmitActionPerformed(evt);
@@ -436,12 +451,12 @@ public class ProductsClass extends javax.swing.JFrame {
                     .addComponent(jQtyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(267, 267, 267)
+                        .addGap(31, 31, 31)
                         .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(278, 278, 278)
+                        .addGap(99, 99, 99)
                         .addComponent(jSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,7 +465,7 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
+                        .addGap(47, 47, 47)
                         .addComponent(jSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -522,31 +537,35 @@ public class ProductsClass extends javax.swing.JFrame {
     }//GEN-LAST:event_jLaiciButtonActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        // TODO add your handling code here:
-        // Calculation
         
-        countLaici = Integer.parseInt(jQtyLaici.getText());
-        totalprice [0] = countLaici*hausboom;
+         // Calculation
         
-        countStroberi = Integer.parseInt(jQtyStroberi.getText());
-        totalprice [1] = countStroberi*hausboom;
         
-        countMango = Integer.parseInt(jQtyMango.getText());
-        totalprice [2] = countMango*hausboom;
+        totallaici = Double.parseDouble(jQtyLaici.getText())*hausboom;
+        totalstroberi = Double.parseDouble(jQtyStroberi.getText())*hausboom;
+        totalmango = Double.parseDouble(jQtyMango.getText())*hausboom;
+       totalblackcurrant= Double.parseDouble(jQtyBlackcurrent.getText())*hausboom;
         
-        countBlackcurrant = Integer.parseInt(jQtyBlackcurrent.getText());
-        totalprice [3] = countBlackcurrant*hausboom;
         
-        totalprice [4] = totalprice [0]+totalprice[1]+totalprice[2]+totalprice[3];
+        totalprice  = totallaici+totalstroberi+totalmango+totalblackcurrant;
+        tax = totalprice*0.15;
+        finalprice = totalprice + tax;
         
-        tax = String.format("RM %.2df", totalprice [4]*0.15);       
-        subtotal = String.format("RM %.2df", totalprice [4]);
-        finalprice = String.format("RM %.2df", totalprice [4]+totalprice [4]*0.15);
+       
         
-        jTotalTax.setText(tax);
-        jSubtotal.setText(subtotal);
-        jTotalPrice.setText(finalprice);
+        txtTax = Double.toString(tax);
+        txtSubtotal = Double.toString(totalprice);
+        txtFinalPrice = Double.toString(finalprice);
+        
+        jTotalTax.setText(String.format("RM %.2f",txtTax));
+        jSubtotal.setText(String.format("RM %.2f",txtSubtotal));
+        jTotalPrice.setText(String.format("RM %.2f",txtFinalPrice));
     }//GEN-LAST:event_jSubmitActionPerformed
+
+    private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jSubmitMouseClicked
 
     /**
      * @param args the command line arguments
