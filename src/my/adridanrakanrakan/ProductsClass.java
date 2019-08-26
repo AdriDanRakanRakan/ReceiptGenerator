@@ -21,10 +21,16 @@ public class ProductsClass extends javax.swing.JFrame {
         initComponents();
     }
     
+    //Variable Declaration
     int countLaici = 0;
     int countBlackcurrant = 0;
     int countStroberi = 0;
     int countMango = 0;
+    
+    double hausboom = 2.00;
+    String tax, subtotal,finalprice ;
+    double totalprice [] = new double [4];
+    
     
 
     /**
@@ -55,22 +61,19 @@ public class ProductsClass extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jQtyLaici = new javax.swing.JTextField();
         jClearLaici = new javax.swing.JButton();
-        jSubmitQtyLaici = new javax.swing.JButton();
         jqtyStrawberryPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jQtyStroberi = new javax.swing.JTextField();
         jClearStroberi = new javax.swing.JButton();
-        jSubmitQtyStroberi = new javax.swing.JButton();
         jQtyMangoPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jQtyMango = new javax.swing.JTextField();
         jClearMango = new javax.swing.JButton();
-        jSubmitQtyMango = new javax.swing.JButton();
         jQtyBlackcurrantPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jQtyBlackcurrent = new javax.swing.JTextField();
         jClearBlackcurrant = new javax.swing.JButton();
-        jSubmitQtyBlackcurrant = new javax.swing.JButton();
+        jSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -189,7 +192,7 @@ public class ProductsClass extends javax.swing.JFrame {
                     .addComponent(jTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTotalPriceLabel))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
         );
 
@@ -216,13 +219,6 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jSubmitQtyLaici.setText("SUBMIT");
-        jSubmitQtyLaici.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitQtyLaiciActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jQtyLycheePanelLayout = new javax.swing.GroupLayout(jQtyLycheePanel);
         jQtyLycheePanel.setLayout(jQtyLycheePanelLayout);
         jQtyLycheePanelLayout.setHorizontalGroup(
@@ -236,10 +232,8 @@ public class ProductsClass extends javax.swing.JFrame {
                         .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jQtyLycheePanelLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jClearLaici)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSubmitQtyLaici)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(jClearLaici)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jQtyLycheePanelLayout.setVerticalGroup(
             jQtyLycheePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,9 +243,7 @@ public class ProductsClass extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jQtyLaici, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jQtyLycheePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jClearLaici, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSubmitQtyLaici, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jClearLaici)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -278,13 +270,6 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jSubmitQtyStroberi.setText("SUBMIT");
-        jSubmitQtyStroberi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitQtyStroberiActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jqtyStrawberryPanelLayout = new javax.swing.GroupLayout(jqtyStrawberryPanel);
         jqtyStrawberryPanel.setLayout(jqtyStrawberryPanelLayout);
         jqtyStrawberryPanelLayout.setHorizontalGroup(
@@ -292,12 +277,10 @@ public class ProductsClass extends javax.swing.JFrame {
             .addGroup(jqtyStrawberryPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jClearStroberi)
-                .addGap(18, 18, 18)
-                .addComponent(jSubmitQtyStroberi)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jqtyStrawberryPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
@@ -310,12 +293,8 @@ public class ProductsClass extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jQtyStroberi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jqtyStrawberryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jqtyStrawberryPanelLayout.createSequentialGroup()
-                        .addComponent(jClearStroberi)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jSubmitQtyStroberi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(jClearStroberi)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jQtyMangoPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -338,13 +317,6 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jSubmitQtyMango.setText("SUBMIT");
-        jSubmitQtyMango.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitQtyMangoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jQtyMangoPanelLayout = new javax.swing.GroupLayout(jQtyMangoPanel);
         jQtyMangoPanel.setLayout(jQtyMangoPanelLayout);
         jQtyMangoPanelLayout.setHorizontalGroup(
@@ -358,10 +330,8 @@ public class ProductsClass extends javax.swing.JFrame {
                         .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jQtyMangoPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jClearMango)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSubmitQtyMango)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(jClearMango)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jQtyMangoPanelLayout.setVerticalGroup(
             jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,9 +341,7 @@ public class ProductsClass extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jQtyMango, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jQtyMangoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jClearMango, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSubmitQtyMango, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jClearMango)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -397,13 +365,6 @@ public class ProductsClass extends javax.swing.JFrame {
             }
         });
 
-        jSubmitQtyBlackcurrant.setText("SUBMIT");
-        jSubmitQtyBlackcurrant.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitQtyBlackcurrantActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jQtyBlackcurrantPanelLayout = new javax.swing.GroupLayout(jQtyBlackcurrantPanel);
         jQtyBlackcurrantPanel.setLayout(jQtyBlackcurrantPanelLayout);
         jQtyBlackcurrantPanelLayout.setHorizontalGroup(
@@ -415,10 +376,7 @@ public class ProductsClass extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jQtyBlackcurrantPanelLayout.createSequentialGroup()
-                        .addComponent(jClearBlackcurrant)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSubmitQtyBlackcurrant)))
+                    .addComponent(jClearBlackcurrant))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jQtyBlackcurrantPanelLayout.setVerticalGroup(
@@ -428,12 +386,8 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addGroup(jQtyBlackcurrantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jQtyBlackcurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jQtyBlackcurrantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jQtyBlackcurrantPanelLayout.createSequentialGroup()
-                        .addGap(0, 10, Short.MAX_VALUE)
-                        .addComponent(jClearBlackcurrant))
-                    .addComponent(jSubmitQtyBlackcurrant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jClearBlackcurrant)
                 .addGap(24, 24, 24))
         );
 
@@ -464,6 +418,13 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
+        jSubmit.setText("SUBMIT");
+        jSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSubmitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -473,8 +434,13 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jQtyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(267, 267, 267)
-                .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(278, 278, 278)
+                        .addComponent(jSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -483,12 +449,14 @@ public class ProductsClass extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jReceiptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(jSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
-                        .addComponent(jQtyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 305, Short.MAX_VALUE))
-                    .addComponent(jReceiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(83, 83, 83))
+                        .addComponent(jQtyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
 
         pack();
@@ -553,29 +521,32 @@ public class ProductsClass extends javax.swing.JFrame {
       jQtyLaici.setEnabled(true);
     }//GEN-LAST:event_jLaiciButtonActionPerformed
 
-    private void jSubmitQtyLaiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitQtyLaiciActionPerformed
-        // Pass String to Int
-        String qtyLaici = jQtyLaici.getText();
-        countLaici = Integer.parseInt(qtyLaici);
-    }//GEN-LAST:event_jSubmitQtyLaiciActionPerformed
-
-    private void jSubmitQtyStroberiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitQtyStroberiActionPerformed
-        // Pass String to Int
-        String qtyStroberi = jQtyStroberi.getText();
-        countStroberi = Integer.parseInt(qtyStroberi);
-    }//GEN-LAST:event_jSubmitQtyStroberiActionPerformed
-
-    private void jSubmitQtyMangoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitQtyMangoActionPerformed
-        // Pass String to Int
-        String qtyMango = jQtyMango.getText();
-        countMango = Integer.parseInt(qtyMango);
-    }//GEN-LAST:event_jSubmitQtyMangoActionPerformed
-
-    private void jSubmitQtyBlackcurrantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitQtyBlackcurrantActionPerformed
-        // Pass String to Int
-        String qtyBlackcurrant = jQtyBlackcurrent.getText();
-        countBlackcurrant = Integer.parseInt(qtyBlackcurrant);
-    }//GEN-LAST:event_jSubmitQtyBlackcurrantActionPerformed
+    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
+        // TODO add your handling code here:
+        // Calculation
+        
+        countLaici = Integer.parseInt(jQtyLaici.getText());
+        totalprice [0] = countLaici*hausboom;
+        
+        countStroberi = Integer.parseInt(jQtyStroberi.getText());
+        totalprice [1] = countStroberi*hausboom;
+        
+        countMango = Integer.parseInt(jQtyMango.getText());
+        totalprice [2] = countMango*hausboom;
+        
+        countBlackcurrant = Integer.parseInt(jQtyBlackcurrent.getText());
+        totalprice [3] = countBlackcurrant*hausboom;
+        
+        totalprice [4] = totalprice [0]+totalprice[1]+totalprice[2]+totalprice[3];
+        
+        tax = String.format("RM %.2df", totalprice [4]*0.15);       
+        subtotal = String.format("RM %.2df", totalprice [4]);
+        finalprice = String.format("RM %.2df", totalprice [4]+totalprice [4]*0.15);
+        
+        jTotalTax.setText(tax);
+        jSubtotal.setText(subtotal);
+        jTotalPrice.setText(finalprice);
+    }//GEN-LAST:event_jSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -637,10 +608,7 @@ public class ProductsClass extends javax.swing.JFrame {
     private javax.swing.JPanel jReceiptPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jStrawberryButton;
-    private javax.swing.JButton jSubmitQtyBlackcurrant;
-    private javax.swing.JButton jSubmitQtyLaici;
-    private javax.swing.JButton jSubmitQtyMango;
-    private javax.swing.JButton jSubmitQtyStroberi;
+    private javax.swing.JButton jSubmit;
     private javax.swing.JTextField jSubtotal;
     private javax.swing.JLabel jSubtotalLabel;
     private javax.swing.JLabel jTaxLabel;
