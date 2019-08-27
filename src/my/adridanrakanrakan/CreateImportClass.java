@@ -246,7 +246,24 @@ public class CreateImportClass extends javax.swing.JFrame {
             System.out.println(e);
             return false;
         }
-        
+            File f = new File(finalP);
+            if (f.exists()){
+                 try
+                {
+                    InputStream is = new FileInputStream(finalP);
+                    String jsonTxt = IOUtils.toString(is, "UTF-8");
+                    JSONParser parser = new JSONParser();
+                    Object obj = parser.parse(jsonTxt);
+                    data = (JSONObject) obj;
+                }    catch (Exception ex)  
+                {
+                    // insert code to run when exception occurs
+                    JOptionPane.showMessageDialog(null, "Invalid data file.", "Oops", JOptionPane.ERROR_MESSAGE);
+                }
+                 
+                current_sale_id = ((Long) data.get("current_sale_id")).intValue();
+                System.out.println(current_sale_id);
+             }
         return true;
     }
     

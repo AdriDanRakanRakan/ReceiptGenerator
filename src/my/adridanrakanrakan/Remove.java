@@ -1,6 +1,8 @@
 
 package my.adridanrakanrakan;
 import org.json.simple.JSONObject;//use JSON
+import javax.swing.*;
+
 /**
  *
  * @author bayam
@@ -139,7 +141,15 @@ public class Remove extends javax.swing.JFrame {
     }//GEN-LAST:event_viewComboBoxActionPerformed
 
     private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
-        // TODO add your handling code here:
+         String value = viewComboBox.getSelectedItem().toString();
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete this?","Warning", dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            Sale s = new Sale();
+            if (s.find(sales, value)) {
+                viewquotarea.setText(s.toString());
+            }
+        }
     }//GEN-LAST:event_removeBtnActionPerformed
 
     private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked

@@ -137,6 +137,11 @@ public class Menu extends javax.swing.JFrame {
                 removequotBtn1MouseClicked(evt);
             }
         });
+        removequotBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removequotBtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -239,8 +244,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_removequotBtnMouseClicked
 
     private void removequotBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removequotBtn1MouseClicked
-        // TODO add your handling code here:
+        this.setVisible(false);
+                new Statistics(MainClass).setVisible(true);//nagivate to remove form
     }//GEN-LAST:event_removequotBtn1MouseClicked
+
+    private void removequotBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removequotBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removequotBtn1ActionPerformed
 
     /**
      * @param args the command line arguments

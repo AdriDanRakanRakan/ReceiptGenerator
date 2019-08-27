@@ -84,6 +84,7 @@ public class Sale extends Receipt {
                 
             return true;
         } else {
+            System.out.println("haha");
             return false;
         }
 
