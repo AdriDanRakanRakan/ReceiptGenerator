@@ -33,13 +33,10 @@ import javax.swing.JOptionPane;
 
 public class CreateImportClass extends javax.swing.JFrame {
 
-    /**
-     * Creates new form WelcomeClass
-     */
     
     public int current_sale_id = 0;
     int mode = 1;
-    String finalP = "";
+    public String finalP = "";
     public JSONObject data = new JSONObject();
     public CreateImportClass() {
         initComponents();
@@ -218,6 +215,7 @@ public class CreateImportClass extends javax.swing.JFrame {
           finalP = filePath;
           System.out.println("You chose " + filePath);
           filePathDisplay.setText(filePath);
+          
         }
     }//GEN-LAST:event_locateFileActionPerformed
 
@@ -278,7 +276,7 @@ public class CreateImportClass extends javax.swing.JFrame {
 //            data.put("sales", sales);
             data.put("current_sale_id", 0);
             System.out.println(data);
-            
+           
             saveChanges();
             
                 this.setVisible(false);

@@ -13,9 +13,17 @@ public class View extends javax.swing.JFrame {
 
     /**
      * Creates new form View
-     */
+     
     public View() {
         initComponents();
+    }
+    */
+    CreateImportClass MainClass;
+    
+    public View(CreateImportClass x) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        MainClass = x;
     }
 
     /**
@@ -147,11 +155,13 @@ public class View extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+    /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new View().setVisible(true);
             }
         });
+*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

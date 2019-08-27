@@ -15,13 +15,26 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     
+    
+    
     CreateImportClass MainClass;
     
+   
+    
     public Menu(CreateImportClass x) {
+        
+        
         initComponents();
         this.setLocationRelativeTo(null);
         MainClass = x;
+        labelLoadmenu.setText(x.finalP); //show filepath in Menu GUI
     }
+    
+
+    
+    
+  
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +53,7 @@ public class Menu extends javax.swing.JFrame {
         removequotBtn = new javax.swing.JButton();
         viewquotBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelLoadmenu = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,7 +114,12 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setText("File:");
 
-        jLabel3.setText("No file load.");
+        labelLoadmenu.setText("No file load.");
+        labelLoadmenu.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                labelLoadmenuPropertyChange(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/Hausboom.png"))); // NOI18N
 
@@ -112,6 +130,12 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1)
+                        .addGap(84, 84, 84))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -124,15 +148,9 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3)))
-                        .addContainerGap(257, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
-                        .addGap(84, 84, 84))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelLoadmenu)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +173,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(labelLoadmenu))
                 .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -180,12 +198,17 @@ public class Menu extends javax.swing.JFrame {
 
     private void newquotBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newquotBtnActionPerformed
                this.setVisible(false);
-                new ProductsClass(MainClass).setVisible(true);
+                new ProductsClass(MainClass).setVisible(true);//nagivate to add product form
     }//GEN-LAST:event_newquotBtnActionPerformed
 
     private void viewquotBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewquotBtnActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+                new View(MainClass).setVisible(true);//nagivate to add product form
     }//GEN-LAST:event_viewquotBtnActionPerformed
+
+    private void labelLoadmenuPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_labelLoadmenuPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelLoadmenuPropertyChange
 
     /**
      * @param args the command line arguments
@@ -222,10 +245,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton editquotBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel labelLoadmenu;
     private javax.swing.JButton newquotBtn;
     private javax.swing.JButton removequotBtn;
     private javax.swing.JButton viewquotBtn;

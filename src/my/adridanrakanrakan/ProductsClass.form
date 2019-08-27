@@ -255,10 +255,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jQtyBlackcurrantPanel" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jQtyMangoPanel" pref="0" max="32767" attributes="0"/>
-                              <Component id="jQtyLycheePanel" min="-2" pref="72" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jQtyMangoPanel" pref="0" max="32767" attributes="0"/>
+                          <Component id="jQtyLycheePanel" min="-2" pref="72" max="-2" attributes="0"/>
                           <Component id="jqtyStrawberryPanel" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
