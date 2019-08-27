@@ -4,21 +4,45 @@
  * and open the template in the editor.
  */
 package my.adridanrakanrakan;
+import org.json.simple.JSONObject;//use JSON
 
 /**
  *
  * @author bayam
  */
+class SaleObjectY {
+
+    private int value;
+    private String text;
+
+    public SaleObjectY(int value, String text) {
+        this.value = value;
+        this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return text;
+    }
+}
+
 public class Edit extends javax.swing.JFrame {
 
     
     CreateImportClass MainClass;
     
-    
+    JSONObject sales;
     public Edit(CreateImportClass x) {
         initComponents();
         this.setLocationRelativeTo(null);
         MainClass = x;
+        sales = (JSONObject) x.data.get("sales");
+        
+        int current_sales_id = x.current_sale_id;
+             
+        sales.keySet().forEach(key -> {
+           viewComboBox.addItem("HB" + String.format("%05d", Integer.parseInt(String.valueOf(key))));
+        });
     }
 
     /**
@@ -45,7 +69,7 @@ public class Edit extends javax.swing.JFrame {
         saveBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        viewquotarea = new javax.swing.JTextArea();
         backBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
@@ -79,7 +103,6 @@ public class Edit extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Blackcurrent:");
 
-        viewComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         viewComboBox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 1, true));
         viewComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         viewComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -181,9 +204,9 @@ public class Edit extends javax.swing.JFrame {
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        viewquotarea.setColumns(20);
+        viewquotarea.setRows(5);
+        jScrollPane1.setViewportView(viewquotarea);
 
         backBtn.setBackground(new java.awt.Color(255, 255, 255));
         backBtn.setText("Back");
@@ -253,7 +276,11 @@ public class Edit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewComboBoxActionPerformed
-        // TODO add your handling code here:
+        String value = viewComboBox.getSelectedItem().toString();
+        Sale s = new Sale();
+        if (s.find(sales, value)) {
+            viewquotarea.setText(s.toString());
+        }
     }//GEN-LAST:event_viewComboBoxActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -323,12 +350,12 @@ public class Edit extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JButton saveBtn;
     private javax.swing.JComboBox<String> viewComboBox;
+    private javax.swing.JTextArea viewquotarea;
     // End of variables declaration//GEN-END:variables
 }

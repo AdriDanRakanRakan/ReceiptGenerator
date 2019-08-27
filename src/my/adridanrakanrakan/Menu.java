@@ -89,11 +89,21 @@ public class Menu extends javax.swing.JFrame {
         editquotBtn.setText("Edit Receipt");
         editquotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
         editquotBtn.setContentAreaFilled(false);
+        editquotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editquotBtnMouseClicked(evt);
+            }
+        });
 
         removequotBtn.setBackground(new java.awt.Color(255, 255, 255));
         removequotBtn.setText("Remove Receipt");
         removequotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
         removequotBtn.setContentAreaFilled(false);
+        removequotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removequotBtnMouseClicked(evt);
+            }
+        });
 
         viewquotBtn.setBackground(new java.awt.Color(255, 255, 255));
         viewquotBtn.setText("View Receipt");
@@ -200,8 +210,18 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_viewquotBtnActionPerformed
 
     private void labelLoadmenuPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_labelLoadmenuPropertyChange
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_labelLoadmenuPropertyChange
+
+    private void editquotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editquotBtnMouseClicked
+        this.setVisible(false);
+                new Edit(MainClass).setVisible(true);//nagivate to edit form
+    }//GEN-LAST:event_editquotBtnMouseClicked
+
+    private void removequotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removequotBtnMouseClicked
+        this.setVisible(false);
+                new Remove(MainClass).setVisible(true);//nagivate to remove form
+    }//GEN-LAST:event_removequotBtnMouseClicked
 
     /**
      * @param args the command line arguments

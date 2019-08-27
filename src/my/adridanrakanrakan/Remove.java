@@ -1,17 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package my.adridanrakanrakan;
 
+package my.adridanrakanrakan;
+import org.json.simple.JSONObject;//use JSON
 /**
  *
  * @author bayam
  */
+class SaleObjectZ {
+
+    private int value;
+    private String text;
+
+    public SaleObjectZ(int value, String text) {
+        this.value = value;
+        this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return text;
+    }
+}
+
 public class Remove extends javax.swing.JFrame {
 
-    
+    JSONObject sales;
     CreateImportClass MainClass;
     
     public Remove(CreateImportClass x) {
@@ -44,7 +56,6 @@ public class Remove extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Remove Receipt");
 
-        viewComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         viewComboBox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 1, true));
         viewComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         viewComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +139,11 @@ public class Remove extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewComboBoxActionPerformed
-        // TODO add your handling code here:
+        String value = viewComboBox.getSelectedItem().toString();
+        Sale s = new Sale();
+        if (s.find(sales, value)) {
+            viewquotarea.setText(s.toString());
+        }
     }//GEN-LAST:event_viewComboBoxActionPerformed
 
     private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
