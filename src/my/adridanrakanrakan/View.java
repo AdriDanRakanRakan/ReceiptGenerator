@@ -12,7 +12,7 @@ package my.adridanrakanrakan;
 
 import org.json.simple.JSONObject;
 import org.apache.commons.io.*;
-import java.awt.print.PrinterException;//enable printing service in java
+import java.awt.print.*;//PrinterException;//enable printing service in java
 import javax.swing.JOptionPane;
 
 class SaleObjectX {
