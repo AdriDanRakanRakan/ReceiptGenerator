@@ -50,6 +50,10 @@ public class Sale extends Receipt {
         return this.find(sales, finalId);
     }
     
+    public void save(CreateImportClass create) {
+        create.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, subtotal, totalprice, timer, laici, stroberi, mango, blackcurrant, saleId);
+    }
+    
     public boolean find(JSONObject sales, int id) {
         boolean found = false;
         

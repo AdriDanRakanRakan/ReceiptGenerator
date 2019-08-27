@@ -33,6 +33,8 @@ public class Edit extends javax.swing.JFrame {
     CreateImportClass MainClass;
     
     JSONObject sales;
+    Sale s;
+    
     public Edit(CreateImportClass x) {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -55,6 +57,7 @@ public class Edit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLaici = new javax.swing.JTextField();
@@ -71,8 +74,22 @@ public class Edit extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewquotarea = new javax.swing.JTextArea();
-        backBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+
+        backBtn.setBackground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
+        backBtn.setContentAreaFilled(false);
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBtnMouseClicked(evt);
+            }
+        });
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -223,21 +240,6 @@ public class Edit extends javax.swing.JFrame {
         viewquotarea.setRows(5);
         jScrollPane1.setViewportView(viewquotarea);
 
-        backBtn.setBackground(new java.awt.Color(255, 255, 255));
-        backBtn.setText("Back");
-        backBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
-        backBtn.setContentAreaFilled(false);
-        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backBtnMouseClicked(evt);
-            }
-        });
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Edit Receipt");
 
@@ -249,15 +251,9 @@ public class Edit extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 28, Short.MAX_VALUE)))
-                        .addContainerGap())
+                        .addGap(35, 35, 35)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(34, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(jLabel6)
@@ -270,9 +266,7 @@ public class Edit extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1)
-                .addGap(18, 18, 18)
-                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(52, 52, 52))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -292,7 +286,7 @@ public class Edit extends javax.swing.JFrame {
 
     private void viewComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewComboBoxActionPerformed
         String value = viewComboBox.getSelectedItem().toString();
-        Sale s = new Sale();
+        s = new Sale();
         if (s.find(sales, value)) {
             viewquotarea.setText(s.toString());
             jLaici.setText(String.valueOf(s.laici));
@@ -308,11 +302,28 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        // TODO add your handling code here:
+        new Menu(MainClass).setVisible(true);
+        
+        dispose(); //go back to menu
     }//GEN-LAST:event_cancelBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-        // TODO add your handling code here:
+        s.laici = Integer.parseInt(jLaici.getText());
+        s.mango = Integer.parseInt(jMango.getText());
+        s.stroberi = Integer.parseInt(jStroberi.getText());
+        s.blackcurrant = Integer.parseInt(jBlackcurrent.getText());
+        //sales.remove(String.valueOf(s.saleId));
+        s.save(MainClass);
+        
+        
+        sales = (JSONObject) MainClass.data.get("sales");
+        if (s.find(sales, s.saleId)) {
+            viewquotarea.setText(s.toString());
+        }
+        
+        
+//        MainClass.data.put("sales", sales); 
+//        MainClass.saveChanges();
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked
