@@ -30,6 +30,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import javax.swing.JOptionPane;
+import java.sql.Timestamp; 
 
 public class CreateImportClass extends javax.swing.JFrame {
 
@@ -237,6 +238,7 @@ public class CreateImportClass extends javax.swing.JFrame {
         return true;
     }
     
+    
     private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueBtnActionPerformed
         if (mode == 1) {
             // create new file
@@ -310,21 +312,32 @@ public class CreateImportClass extends javax.swing.JFrame {
 
     }//GEN-LAST:event_continueBtnActionPerformed
 
-    public int addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer) {
+
+    public int addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer, int laici, int stroberi, int mango, int blackcurrant) {
             
         JSONObject sales = (JSONObject) data.get("sales");
                 
         JSONObject sale1 = new JSONObject();
-            
-        sale1.put("mango", totalmango);
-        sale1.put("laici", totallaici);
-        sale1.put("stroberi", totalstroberi);
-        sale1.put("blackcurrant", totalblackcurrant);
+        
+        current_sale_id++;
+        
+        sale1.put("id", current_sale_id);
+        sale1.put("total_mango", totalmango);
+        sale1.put("total_laici", totallaici);
+        sale1.put("total_stroberi", totalstroberi);
+        sale1.put("total_blackcurrant", totalblackcurrant);
+        
+        sale1.put("mango", mango);
+        sale1.put("laici", laici);
+        sale1.put("stroberi", stroberi);
+        sale1.put("blackcurrant", blackcurrant);
+        
         sale1.put("tax", tax);
         sale1.put("subtotal", totalprice);
         sale1.put("totalprice", finalprice);
+
+        sale1.put("timer", timer.getTimeInMillis());
         
-        current_sale_id++;
         sales.put(current_sale_id, sale1);
         data.put("current_sale_id", current_sale_id);
         data.put("sales", sales);

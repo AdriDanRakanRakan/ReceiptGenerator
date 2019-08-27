@@ -22,19 +22,12 @@ public class Menu extends javax.swing.JFrame {
    
     
     public Menu(CreateImportClass x) {
-        
-        
         initComponents();
         this.setLocationRelativeTo(null);
         MainClass = x;
         labelLoadmenu.setText(x.finalP); //show filepath in Menu GUI
     }
     
-
-    
-    
-  
- 
 
     /**
      * This method is called from within the constructor to initialize the form.

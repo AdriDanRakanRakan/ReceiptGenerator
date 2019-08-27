@@ -21,7 +21,7 @@ import org.json.simple.JSONValue;
 import java.io.*;  
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.sql.Timestamp; 
 public class ProductsClass extends javax.swing.JFrame {
 
     /**
@@ -37,7 +37,7 @@ public class ProductsClass extends javax.swing.JFrame {
     }
     
     DecimalFormat df = new DecimalFormat ("0.00");
-    
+    private Sale sale;
    
     double hausboom = 2.00;
     String  txtTax, txtFinalPrice,txtSubtotal ;
@@ -686,7 +686,11 @@ public class ProductsClass extends javax.swing.JFrame {
         jTotalTax.setText(txtTax);
         jSubtotal.setText(txtSubtotal);
         jTotalPrice.setText(txtFinalPrice);
+        
+        
     }
+
+    
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {                                        
         
          // Read Input based on quantity
@@ -697,33 +701,11 @@ public class ProductsClass extends javax.swing.JFrame {
         //========================================================
         Calendar timer = Calendar.getInstance();
         timer.getTime();
-        
-        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");
-        tTime.format(timer.getTime());
-        SimpleDateFormat Tdate = new SimpleDateFormat ("dd/mm/yyy");
-        Tdate.format(timer.getTime());
-        
-        
-        int saleId = MainClass.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, totalprice, finalprice, timer);
+ 
+        Sale sale = new Sale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, totalprice, finalprice, timer, qtyLaici, qtyStroberi, qtyMango, qtyBlackcurrant, MainClass);
         
         //=========================================================
-        jReceipt.append("\t Haus Boom Orders \n\n"+
-                
-                "\n============================================"+
-                "Reference: HB" + String.format("%05d" , saleId) + "\t\t\t\t"+
-                "\n============================================"+
-                "\nLaici       :\t\t\t"+jQtyLaici.getText()+
-                "\nStrawberry  :\t\t\t"+jQtyStroberi.getText()+
-                "\nMango       :\t\t\t"+jQtyMango.getText()+
-                "\nBlackcurrant:\t\t\t"+jQtyBlackcurrent.getText()+
-                "\n============================================"+
-                "\nTax        :\t\t\t"+"RM "+txtTax+
-                "\nSub Total  :\t\t\t"+"RM "+txtSubtotal+
-                "\nTotal Price:\t\t\t"+"RM "+txtFinalPrice+
-                "\n============================================"+
-                "\nDate: "+Tdate.format(timer.getTime())+
-                "\t\tTime: "+tTime.format(timer.getTime())+
-                "\n\n   THANK YOU FOR SHOPPING WITH HAUS BOOM !");
+        jReceipt.setText(sale.toString());
         
         //Disable All Button after Submitted
         jClearLaici.setEnabled(false);

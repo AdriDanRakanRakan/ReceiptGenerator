@@ -9,6 +9,26 @@ package my.adridanrakanrakan;
  *
  * @author bayam
  */
+
+import org.json.simple.JSONObject;
+import org.apache.commons.io.*;
+
+class SaleObjectX {
+
+    private int value;
+    private String text;
+
+    public SaleObjectX(int value, String text) {
+        this.value = value;
+        this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return text;
+    }
+}
+
 public class View extends javax.swing.JFrame {
 
     /**
@@ -20,10 +40,19 @@ public class View extends javax.swing.JFrame {
     */
     CreateImportClass MainClass;
     
+    JSONObject sales;
+    
     public View(CreateImportClass x) {
         initComponents();
         this.setLocationRelativeTo(null);
         MainClass = x;
+        sales = (JSONObject) x.data.get("sales");
+        
+        int current_sales_id = x.current_sale_id;
+             
+        sales.keySet().forEach(key -> {
+           viewComboBox.addItem("HB" + String.format("%05d", Integer.parseInt(String.valueOf(key))));
+        });
     }
 
     /**
@@ -50,9 +79,9 @@ public class View extends javax.swing.JFrame {
 
         jLabel1.setText("View Quotation");
 
-        viewComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         viewComboBox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 1, true));
         viewComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        viewComboBox.setInheritsPopupMenu(true);
         viewComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewComboBoxActionPerformed(evt);
@@ -124,7 +153,11 @@ public class View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewComboBoxActionPerformed
-        // TODO add your handling code here:
+        String value = viewComboBox.getSelectedItem().toString();
+        Sale s = new Sale();
+        if (s.find(sales, value)) {
+            viewquotarea.setText(s.toString());
+        }
     }//GEN-LAST:event_viewComboBoxActionPerformed
 
     /**
