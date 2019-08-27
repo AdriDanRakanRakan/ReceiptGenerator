@@ -48,6 +48,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         labelLoadmenu = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        removequotBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HausBoom Menu");
@@ -126,6 +127,17 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/Hausboom.png"))); // NOI18N
 
+        removequotBtn1.setBackground(new java.awt.Color(255, 255, 255));
+        removequotBtn1.setText("Statistics");
+        removequotBtn1.setToolTipText("");
+        removequotBtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
+        removequotBtn1.setContentAreaFilled(false);
+        removequotBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removequotBtn1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -147,7 +159,8 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(newquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(editquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(removequotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(removequotBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel2)
@@ -173,6 +186,8 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(editquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(removequotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(removequotBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -223,6 +238,10 @@ public class Menu extends javax.swing.JFrame {
                 new Remove(MainClass).setVisible(true);//nagivate to remove form
     }//GEN-LAST:event_removequotBtnMouseClicked
 
+    private void removequotBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removequotBtn1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removequotBtn1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -264,6 +283,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel labelLoadmenu;
     private javax.swing.JButton newquotBtn;
     private javax.swing.JButton removequotBtn;
+    private javax.swing.JButton removequotBtn1;
     private javax.swing.JButton viewquotBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,21 +5,6 @@ import org.json.simple.JSONObject;//use JSON
  *
  * @author bayam
  */
-class SaleObjectZ {
-
-    private int value;
-    private String text;
-
-    public SaleObjectZ(int value, String text) {
-        this.value = value;
-        this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return text;
-    }
-}
 
 public class Remove extends javax.swing.JFrame {
 
@@ -30,6 +15,13 @@ public class Remove extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         MainClass = x;
+        sales = (JSONObject) x.data.get("sales");
+        
+        int current_sales_id = x.current_sale_id;
+             
+        sales.keySet().forEach(key -> {
+           viewComboBox.addItem("HB" + String.format("%05d", Integer.parseInt(String.valueOf(key))));
+        });
     }
 
     /**
