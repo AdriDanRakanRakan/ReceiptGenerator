@@ -240,6 +240,7 @@ public class CreateImportClass extends javax.swing.JFrame {
     
     public boolean saveChanges() {
         try {    
+    
             FileWriter fw = new FileWriter(finalP);    
             fw.write(data.toString());    
             fw.close();  
