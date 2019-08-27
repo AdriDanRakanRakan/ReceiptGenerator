@@ -155,6 +155,11 @@ public class Edit extends javax.swing.JFrame {
                 cancelBtnActionPerformed(evt);
             }
         });
+        cancelBtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cancelBtnKeyPressed(evt);
+            }
+        });
 
         saveBtn.setBackground(new java.awt.Color(255, 255, 255));
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -302,9 +307,9 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        dispose(); //go back to menu
+        this.setVisible(false);
         new Menu(MainClass).setVisible(true);
-        
+        dispose(); //go back to menu
         
     }//GEN-LAST:event_cancelBtnActionPerformed
 
@@ -366,6 +371,12 @@ public class Edit extends javax.swing.JFrame {
           evt.consume();
         } 
     }//GEN-LAST:event_jBlackcurrentKeyTyped
+
+    private void cancelBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cancelBtnKeyPressed
+        this.setVisible(false);
+        new Menu(MainClass).setVisible(true);
+        dispose(); //go back to menu
+    }//GEN-LAST:event_cancelBtnKeyPressed
 
     /**
      * @param args the command line arguments
