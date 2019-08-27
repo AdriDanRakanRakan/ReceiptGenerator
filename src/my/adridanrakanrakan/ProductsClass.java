@@ -37,7 +37,7 @@ public class ProductsClass extends javax.swing.JFrame {
     }
     
     DecimalFormat df = new DecimalFormat ("0.00");
-    private Sale sale;
+    
    
     double hausboom = 2.00;
     String  txtTax, txtFinalPrice,txtSubtotal ;

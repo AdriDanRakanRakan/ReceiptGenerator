@@ -1,24 +1,18 @@
 package my.adridanrakanrakan;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author akifrabbani
  */
 
-import java.io.FileReader;
-import java.util.Iterator;
+//import java.io.FileReader;
+//import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.io.FileWriter;  
+import java.io.FileWriter; 
+import java.io.IOException;
 
-import org.json.simple.JSONArray;
+//import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -26,11 +20,11 @@ import org.apache.commons.io.IOUtils;
 import java.util.*; 
 
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+//import java.awt.event.*;
+//import javax.swing.*;
 
 import javax.swing.JOptionPane;
-import java.sql.Timestamp; 
+//import java.sql.Timestamp; 
 
 public class CreateImportClass extends javax.swing.JFrame {
 
@@ -75,6 +69,11 @@ public class CreateImportClass extends javax.swing.JFrame {
         exitBtn.setText("Cancel");
         exitBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 1, true));
         exitBtn.setContentAreaFilled(false);
+        exitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitBtnMouseClicked(evt);
+            }
+        });
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBtnActionPerformed(evt);
@@ -234,8 +233,8 @@ public class CreateImportClass extends javax.swing.JFrame {
     }//GEN-LAST:event_locateFileActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
-        //System.exit(0);
-        dispose();
+        System.exit(0);
+        //dispose();
     }//GEN-LAST:event_exitBtnActionPerformed
     
     public boolean saveChanges() {
@@ -243,7 +242,7 @@ public class CreateImportClass extends javax.swing.JFrame {
             FileWriter fw = new FileWriter(finalP);    
             fw.write(data.toString());    
             fw.close();  
-        } catch(Exception e) {
+        } catch(IOException e) { //Exception
             System.out.println(e);
             return false;
         }
@@ -324,6 +323,10 @@ public class CreateImportClass extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_continueBtnActionPerformed
+
+    private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitBtnMouseClicked
 
 
     public int addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer, int laici, int stroberi, int mango, int blackcurrant) {

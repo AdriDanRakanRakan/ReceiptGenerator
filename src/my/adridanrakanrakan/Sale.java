@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import org.json.simple.JSONObject;
 import java.util.Calendar;
 import java.sql.Timestamp; 
+import java.text.*;
 
 /**
  *
@@ -28,6 +29,8 @@ public class Sale {
     int stroberi;
     int mango;
     int blackcurrant;
+    
+    DecimalFormat df = new DecimalFormat("0.00");
     
     public Sale(double a, double b, double c, double d, double e, double f, double g, Calendar h, int j, int k, int l, int m, CreateImportClass create) {
 
@@ -101,25 +104,26 @@ public class Sale {
 
     }
     
+    @Override
     public String toString() {
       SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");
         tTime.format(timer.getTime());
         SimpleDateFormat Tdate = new SimpleDateFormat ("dd/mm/yyy");
         Tdate.format(timer.getTime());
         
-        return "\t Haus Boom Orders \n\n"+
+        return "\n\t Haus Boom Orders \n\n"+
                 
                 "\n============================================"+
-                "Reference: HB" + String.format("%05d", saleId) + "\t\t\t\t"+
+                "\nReference: HB" + String.format("%05d", saleId) + "\t\t\t\t"+
                 "\n============================================"+
                 "\nLaici       :\t\t\t"+laici+
                 "\nStrawberry  :\t\t\t"+stroberi+
                 "\nMango       :\t\t\t"+mango+
                 "\nBlackcurrant:\t\t\t"+blackcurrant+
                 "\n============================================"+
-                "\nTax        :\t\t\t"+"RM "+tax+
-                "\nSub Total  :\t\t\t"+"RM "+subtotal+
-                "\nTotal Price:\t\t\t"+"RM "+totalprice+
+                "\nTax        :\t\t\t"+"RM "+df.format(tax)+
+                "\nSub Total  :\t\t\t"+"RM "+df.format(subtotal)+
+                "\nTotal Price:\t\t\t"+"RM "+df.format(totalprice)+
                 "\n============================================"+
                 "\nDate: "+Tdate.format(timer.getTime())+
                 "\t\tTime: "+tTime.format(timer.getTime())+
