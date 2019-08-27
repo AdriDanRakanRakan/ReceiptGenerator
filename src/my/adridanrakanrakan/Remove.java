@@ -11,11 +11,13 @@ package my.adridanrakanrakan;
  */
 public class Remove extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Remove
-     */
-    public Remove() {
+    
+    CreateImportClass MainClass;
+    
+    public Remove(CreateImportClass x) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        MainClass = x;
     }
 
     /**
@@ -33,7 +35,7 @@ public class Remove extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         viewquotarea = new javax.swing.JTextArea();
         backBtn = new javax.swing.JButton();
-        printBtn = new javax.swing.JButton();
+        removeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,13 +61,18 @@ public class Remove extends javax.swing.JFrame {
         backBtn.setText("Back");
         backBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
         backBtn.setContentAreaFilled(false);
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBtnMouseClicked(evt);
+            }
+        });
 
-        printBtn.setText("Remove");
-        printBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
-        printBtn.setContentAreaFilled(false);
-        printBtn.addActionListener(new java.awt.event.ActionListener() {
+        removeBtn.setText("Remove");
+        removeBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
+        removeBtn.setContentAreaFilled(false);
+        removeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                printBtnActionPerformed(evt);
+                removeBtnActionPerformed(evt);
             }
         });
 
@@ -83,7 +90,7 @@ public class Remove extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(printBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(removeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(189, 189, 189)
@@ -102,7 +109,7 @@ public class Remove extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(printBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(removeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -124,9 +131,15 @@ public class Remove extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewComboBoxActionPerformed
 
-    private void printBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printBtnActionPerformed
+    private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_printBtnActionPerformed
+    }//GEN-LAST:event_removeBtnActionPerformed
+
+    private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked
+        new Menu(MainClass).setVisible(true);
+        
+        dispose(); //go back to menu
+    }//GEN-LAST:event_backBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -156,11 +169,13 @@ public class Remove extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Remove().setVisible(true);
             }
         });
+*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -168,7 +183,7 @@ public class Remove extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton printBtn;
+    private javax.swing.JButton removeBtn;
     private javax.swing.JComboBox<String> viewComboBox;
     private javax.swing.JTextArea viewquotarea;
     // End of variables declaration//GEN-END:variables

@@ -96,6 +96,11 @@ public class View extends javax.swing.JFrame {
         jButton1.setText("Back");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
         jButton1.setContentAreaFilled(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Print");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
@@ -159,6 +164,12 @@ public class View extends javax.swing.JFrame {
             viewquotarea.setText(s.toString());
         }
     }//GEN-LAST:event_viewComboBoxActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        new Menu(MainClass).setVisible(true);
+        
+        dispose(); //go back to menu
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
