@@ -89,4 +89,5 @@ public class Sale extends Receipt {
         }
 
     }
+    
 }
