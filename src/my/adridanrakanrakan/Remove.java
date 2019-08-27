@@ -1,23 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package my.adridanrakanrakan;
+import org.json.simple.JSONObject;//use JSON
+import javax.swing.*;
 
 /**
  *
  * @author bayam
  */
+
 public class Remove extends javax.swing.JFrame {
 
-    
+    JSONObject sales;
     CreateImportClass MainClass;
     
     public Remove(CreateImportClass x) {
         initComponents();
         this.setLocationRelativeTo(null);
         MainClass = x;
+        sales = (JSONObject) x.data.get("sales");
+        
+        int current_sales_id = x.current_sale_id;
+             
+        loadData();
+    }
+    
+    private void loadData() {
+        sales.keySet().forEach(key -> {
+           viewComboBox.addItem("HB" + String.format("%05d", Integer.parseInt(String.valueOf(key))));
+        });
     }
 
     /**
@@ -44,7 +54,6 @@ public class Remove extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Remove Receipt");
 
-        viewComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         viewComboBox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 1, true));
         viewComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         viewComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -128,11 +137,29 @@ public class Remove extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewComboBoxActionPerformed
-        // TODO add your handling code here:
+        if (viewComboBox.getItemCount() != 0) {
+            String value = viewComboBox.getSelectedItem().toString();
+            Sale s = new Sale();
+            if (s.find(sales, value)) {
+                viewquotarea.setText(s.toString());
+            }
+        }
     }//GEN-LAST:event_viewComboBoxActionPerformed
 
     private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
-        // TODO add your handling code here:
+        String value = viewComboBox.getSelectedItem().toString();
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete this?","Warning", dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            Sale s = new Sale();
+            if (s.find(sales, value)) {
+                sales.remove(String.valueOf(s.saleId));
+                MainClass.data.put("sales", sales); 
+                MainClass.saveChanges();
+                viewComboBox.removeAllItems();
+                loadData();
+            }
+        }
     }//GEN-LAST:event_removeBtnActionPerformed
 
     private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked

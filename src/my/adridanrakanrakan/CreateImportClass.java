@@ -31,6 +31,7 @@ public class CreateImportClass extends javax.swing.JFrame {
     
     public int current_sale_id = 0;
     int mode = 1;
+    double hausboom = 2.00;
     public String finalP = "";
     public JSONObject data = new JSONObject();
     public CreateImportClass() {
@@ -246,7 +247,24 @@ public class CreateImportClass extends javax.swing.JFrame {
             System.out.println(e);
             return false;
         }
-        
+            File f = new File(finalP);
+            if (f.exists()){
+                 try
+                {
+                    InputStream is = new FileInputStream(finalP);
+                    String jsonTxt = IOUtils.toString(is, "UTF-8");
+                    JSONParser parser = new JSONParser();
+                    Object obj = parser.parse(jsonTxt);
+                    data = (JSONObject) obj;
+                }    catch (Exception ex)  
+                {
+                    // insert code to run when exception occurs
+                    JOptionPane.showMessageDialog(null, "Invalid data file.", "Oops", JOptionPane.ERROR_MESSAGE);
+                }
+                 
+                current_sale_id = ((Long) data.get("current_sale_id")).intValue();
+                System.out.println(current_sale_id);
+             }
         return true;
     }
     
@@ -328,7 +346,47 @@ public class CreateImportClass extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_exitBtnMouseClicked
 
+    public int addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer, int laici, int stroberi, int mango, int blackcurrant, int id) {
+            
+        JSONObject sales = (JSONObject) data.get("sales");
+                
+        JSONObject sale1 = new JSONObject();
+        
+        totallaici = laici*hausboom;
+        totalstroberi = stroberi*hausboom;
+        totalmango = mango*hausboom;
+        totalblackcurrant= blackcurrant*hausboom;
+        
+        // Calculation
+        totalprice  = totallaici+totalstroberi+totalmango+totalblackcurrant;
+        tax = totalprice*0.15;
+        finalprice = totalprice + tax;
+        
+        sale1.put("id", id);
+        sale1.put("total_mango", totalmango);
+        sale1.put("total_laici", totallaici);
+        sale1.put("total_stroberi", totalstroberi);
+        sale1.put("total_blackcurrant", totalblackcurrant);
+        
+        sale1.put("mango", mango);
+        sale1.put("laici", laici);
+        sale1.put("stroberi", stroberi);
+        sale1.put("blackcurrant", blackcurrant);
+        
+        sale1.put("tax", tax);
+        sale1.put("subtotal", totalprice);
+        sale1.put("totalprice", finalprice);
 
+        sale1.put("timer", timer.getTimeInMillis());
+        sales.put(id, sale1);
+        
+        data.put("sales", sales);
+        
+        saveChanges();  
+        
+        return id;
+    }
+    
     public int addSale(double totallaici, double totalstroberi, double totalmango, double totalblackcurrant, double tax, double totalprice, double finalprice, Calendar timer, int laici, int stroberi, int mango, int blackcurrant) {
             
         JSONObject sales = (JSONObject) data.get("sales");
