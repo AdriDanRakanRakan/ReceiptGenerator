@@ -34,6 +34,7 @@ public class Sale extends Receipt {
         blackcurrant = m;
         
         saleId = create.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, subtotal, totalprice, timer, laici, stroberi, mango, blackcurrant);
+        //pass data ke dalam class kat createimport class file
     }
     
     public Sale() {
@@ -41,7 +42,7 @@ public class Sale extends Receipt {
     }
     
     public boolean find(JSONObject sales, String x) {
-        String id = x.replace("HB", "");
+        String id = x.replace("HB", "");//replace dengan nothing sebab dalam JSON file id receipt hanya icrement number
         String strPattern = "^0+(?!$)";        
         id = id.replaceAll(strPattern, "");
         
@@ -52,6 +53,7 @@ public class Sale extends Receipt {
     
     public void save(CreateImportClass create) {
         create.addSale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, subtotal, totalprice, timer, laici, stroberi, mango, blackcurrant, saleId);
+        //save data
     }
     
     public boolean find(JSONObject sales, int id) {
@@ -62,7 +64,7 @@ public class Sale extends Receipt {
         if (sales.containsKey(yid)) {
             JSONObject sale = (JSONObject) sales.get(yid);
             System.out.println(sale);
-            
+            //JSON boleh dapatkan double terus dari long
             totallaici = (double) sale.get("total_laici");
             totalstroberi = (double) sale.get("total_stroberi");
             totalmango = (double) sale.get("total_mango");
@@ -78,7 +80,7 @@ public class Sale extends Receipt {
             timer = calendar;
             
            // timer = ((Long) sale.get("laici")).intValue();
-
+           //untuk yang integer tak boleh so kita ambil long parse ke integer
             laici = ((Long) sale.get("laici")).intValue();
             stroberi = ((Long) sale.get("stroberi")).intValue();
             mango = ((Long) sale.get("mango")).intValue();
