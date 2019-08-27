@@ -38,17 +38,43 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        removequotBtn1 = new javax.swing.JButton();
+        editquotBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         newquotBtn = new javax.swing.JButton();
-        editquotBtn = new javax.swing.JButton();
         removequotBtn = new javax.swing.JButton();
         viewquotBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         labelLoadmenu = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        removequotBtn1 = new javax.swing.JButton();
+
+        removequotBtn1.setBackground(new java.awt.Color(255, 255, 255));
+        removequotBtn1.setText("Statistics");
+        removequotBtn1.setToolTipText("");
+        removequotBtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
+        removequotBtn1.setContentAreaFilled(false);
+        removequotBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removequotBtn1MouseClicked(evt);
+            }
+        });
+        removequotBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removequotBtn1ActionPerformed(evt);
+            }
+        });
+
+        editquotBtn.setBackground(new java.awt.Color(255, 255, 255));
+        editquotBtn.setText("Edit Receipt");
+        editquotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
+        editquotBtn.setContentAreaFilled(false);
+        editquotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editquotBtnMouseClicked(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HausBoom Menu");
@@ -86,16 +112,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        editquotBtn.setBackground(new java.awt.Color(255, 255, 255));
-        editquotBtn.setText("Edit Receipt");
-        editquotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
-        editquotBtn.setContentAreaFilled(false);
-        editquotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                editquotBtnMouseClicked(evt);
-            }
-        });
-
         removequotBtn.setBackground(new java.awt.Color(255, 255, 255));
         removequotBtn.setText("Remove Receipt");
         removequotBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
@@ -127,22 +143,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/adridanrakanrakan/res/img/Hausboom.png"))); // NOI18N
 
-        removequotBtn1.setBackground(new java.awt.Color(255, 255, 255));
-        removequotBtn1.setText("Statistics");
-        removequotBtn1.setToolTipText("");
-        removequotBtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 3));
-        removequotBtn1.setContentAreaFilled(false);
-        removequotBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                removequotBtn1MouseClicked(evt);
-            }
-        });
-        removequotBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removequotBtn1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -162,10 +162,8 @@ public class Menu extends javax.swing.JFrame {
                                 .addGap(233, 233, 233)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(newquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(editquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(removequotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(removequotBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel2)
@@ -188,11 +186,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(viewquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(editquotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(removequotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(removequotBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
