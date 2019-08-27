@@ -144,13 +144,13 @@ public class Menu extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel11))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel3))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel12))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel5))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
@@ -316,8 +316,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_labelLoadmenuPropertyChange
 
     private void editquotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editquotBtnMouseClicked
-        this.setVisible(false);
-                new Edit(MainClass).setVisible(true);//nagivate to edit form
+//        this.setVisible(false);
+//        new Edit(MainClass).setVisible(true);//nagivate to edit form
     }//GEN-LAST:event_editquotBtnMouseClicked
 
     private void removequotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removequotBtnMouseClicked
