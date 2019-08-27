@@ -32,13 +32,13 @@ public class ProductsClass extends javax.swing.JFrame {
     
     public ProductsClass(CreateImportClass x) {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);//Centerkan windows of the system
         MainClass = x;
     }
-    
+    //Decimal Format
     DecimalFormat df = new DecimalFormat ("0.00");
     
-   
+   //Variable declaration
     double hausboom = 2.00;
     String  txtTax, txtFinalPrice,txtSubtotal ;
     double totallaici, totalmango, totalstroberi, totalblackcurrant, totalprice,tax,finalprice;
@@ -632,7 +632,7 @@ public class ProductsClass extends javax.swing.JFrame {
       qtyBlackcurrant = qtyBlackcurrant + 1;
       
       jQtyBlackcurrent.setEnabled(true);
-      jQtyBlackcurrent.setText(String.valueOf(qtyBlackcurrant));
+      jQtyBlackcurrent.setText(String.valueOf(qtyBlackcurrant));//Pass Value to Int
       calculateTotal();
     }                                                   
 
@@ -641,7 +641,7 @@ public class ProductsClass extends javax.swing.JFrame {
       qtyMango = qtyMango + 1;
       
       jQtyMango.setEnabled(true);
-      jQtyMango.setText(String.valueOf(qtyMango));
+      jQtyMango.setText(String.valueOf(qtyMango));//Pass Value to Int
       calculateTotal();
     }                                            
 
@@ -650,7 +650,7 @@ public class ProductsClass extends javax.swing.JFrame {
       qtyStroberi = qtyStroberi + 1;
       
       jQtyStroberi.setEnabled(true);
-      jQtyStroberi.setText(String.valueOf(qtyStroberi));
+      jQtyStroberi.setText(String.valueOf(qtyStroberi));//Pass Value to Int
       calculateTotal();
     }                                                 
 
@@ -659,11 +659,12 @@ public class ProductsClass extends javax.swing.JFrame {
       qtyLaici = qtyLaici + 1;
       
       jQtyLaici.setEnabled(true);
-      jQtyLaici.setText(String.valueOf(qtyLaici));
+      jQtyLaici.setText(String.valueOf(qtyLaici));//Pass Value to Int
       calculateTotal();
     }                                            
 
     private void calculateTotal() {
+        //Calculate Quantity * price of a bottle of Hausboom
         totallaici = qtyLaici*hausboom;
         totalstroberi = qtyStroberi*hausboom;
         totalmango = qtyMango*hausboom;
@@ -703,6 +704,7 @@ public class ProductsClass extends javax.swing.JFrame {
         Sale sale = new Sale(totallaici, totalstroberi, totalmango, totalblackcurrant, tax, totalprice, finalprice, timer, qtyLaici, qtyStroberi, qtyMango, qtyBlackcurrant, MainClass);
         
         //=========================================================
+       //Input Receipt to Text Area
         jReceipt.setText(sale.toString());
         
         //Disable All Button after Submitted
@@ -743,7 +745,7 @@ public class ProductsClass extends javax.swing.JFrame {
         if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
-        } else if (!jQtyLaici.getText().equals("")) {
+        } else if (!jQtyLaici.getText().equals("")) {//Send value to integer declared
             qtyLaici = Integer.parseInt(jQtyLaici.getText());
             jQtyLaici.setText(String.valueOf(qtyLaici));
     
@@ -756,7 +758,7 @@ public class ProductsClass extends javax.swing.JFrame {
         if( !(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
-        } else if (!jQtyStroberi.getText().equals("")) {
+        } else if (!jQtyStroberi.getText().equals("")) {//Send value to integer declared
             qtyStroberi = Integer.parseInt(jQtyStroberi.getText());
             jQtyStroberi.setText(String.valueOf(qtyStroberi));
          
@@ -768,7 +770,7 @@ public class ProductsClass extends javax.swing.JFrame {
         if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
-        } else if (!jQtyMango.getText().equals("")) {
+        } else if (!jQtyMango.getText().equals("")) {//Send value to integer declared
             qtyMango = Integer.parseInt(jQtyMango.getText());
             jQtyMango.setText(String.valueOf(qtyMango));
      
@@ -781,7 +783,7 @@ public class ProductsClass extends javax.swing.JFrame {
         if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
           getToolkit().beep();
           evt.consume();
-        } else if (!jQtyBlackcurrent.getText().equals("")) {
+        } else if (!jQtyBlackcurrent.getText().equals("")) {//Send value to integer declared
             qtyBlackcurrant = Integer.parseInt(jQtyBlackcurrent.getText());
             jQtyBlackcurrent.setText(String.valueOf(qtyBlackcurrant));
         }
