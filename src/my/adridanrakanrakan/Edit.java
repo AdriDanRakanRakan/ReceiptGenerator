@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package my.adridanrakanrakan;
+import java.awt.event.KeyEvent;
 import org.json.simple.JSONObject;//use JSON
 
 /**
@@ -78,6 +79,30 @@ public class Edit extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLaici.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jLaiciKeyTyped(evt);
+            }
+        });
+
+        jStroberi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jStroberiKeyTyped(evt);
+            }
+        });
+
+        jMango.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jMangoKeyTyped(evt);
+            }
+        });
+
+        jBlackcurrent.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jBlackcurrentKeyTyped(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -295,6 +320,40 @@ public class Edit extends javax.swing.JFrame {
         
         dispose(); //go back to menu
     }//GEN-LAST:event_backBtnMouseClicked
+
+    private void jLaiciKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLaiciKeyTyped
+        // Only input INT
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jLaiciKeyTyped
+
+    private void jStroberiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jStroberiKeyTyped
+        char c = evt.getKeyChar();
+        if( !(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jStroberiKeyTyped
+
+    private void jMangoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMangoKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        }
+    }//GEN-LAST:event_jMangoKeyTyped
+
+    private void jBlackcurrentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBlackcurrentKeyTyped
+                                        
+         char c = evt.getKeyChar();
+        if(!(Character.isDigit(c)||c==KeyEvent.VK_BACK_SPACE||c==KeyEvent.VK_DELETE)){
+          getToolkit().beep();
+          evt.consume();
+        } 
+    }//GEN-LAST:event_jBlackcurrentKeyTyped
 
     /**
      * @param args the command line arguments

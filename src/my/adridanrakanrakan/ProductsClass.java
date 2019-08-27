@@ -757,8 +757,8 @@ public class ProductsClass extends javax.swing.JFrame {
           getToolkit().beep();
           evt.consume();
         } else if (!jQtyStroberi.getText().equals("")) {
-            int current = Integer.parseInt(jQtyStroberi.getText());
-            jQtyStroberi.setText(String.valueOf(current));
+            qtyStroberi = Integer.parseInt(jQtyStroberi.getText());
+            jQtyStroberi.setText(String.valueOf(qtyStroberi));
          
         }
     }                                     

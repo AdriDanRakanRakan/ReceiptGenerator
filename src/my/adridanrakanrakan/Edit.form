@@ -178,12 +178,24 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="jLaici">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jLaiciKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jStroberi">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jStroberiKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jMango">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jMangoKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jBlackcurrent">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jBlackcurrentKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
